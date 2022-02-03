@@ -1,6 +1,10 @@
 ## Rust Aimbot
+> 🛑 Source code has nothing to do with the text. don't try to use it
+
+
 > ESP, AIMBOT, And Much More 
-> > Join Discord For Support [Disocrd](https://discord.gg/Xfs8UVtrSf)
+
+>  Join Discord For Support [Disocrd](https://discord.gg/Xfs8UVtrSf)
 
 On YouTube, there are a lot of Rust hacks that you have to pay for (or it's a virus if it's free). However, I've made a free Rust hack to use in-game 
 
