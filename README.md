@@ -4,7 +4,7 @@
 
 > ESP, AIMBOT, And Much More 
 
-### [Discord.gg/Sarnax](https://discord.com/invite/sarnax)
+### Sell Cheating Private / Source code Contact discord  [Discord.gg/Sarnax](https://discord.com/invite/sarnax) 
 
 On YouTube, there are a lot of Rust hacks that you have to pay for (or it's a virus if it's free). However, I've made a free Rust hack to use in-game 
 
