@@ -7,6 +7,14 @@
 ### FOR SUPPORT : [Discord.gg/Sarnax](https://discord.com/invite/sarnax) 
 > #### Discord : Sarnax#9999
 
+***
+
+**Discord Support & Sell**
+> - Craete Cheating Private // Not Detected & If Banned = Refund
+> - Contact Discord to order.
+
+***
+
 On YouTube, there are a lot of Rust hacks that you have to pay for (or it's a virus if it's free). However, I've made a free Rust hack to use in-game 
 
 (Use at your own risk, if it has an anti-cheat, the injector will not work).
