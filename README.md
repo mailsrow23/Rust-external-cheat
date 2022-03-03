@@ -1,7 +1,7 @@
 ## Rust Aimbot
-> 🛑 Source code has nothing to do with the text. don't try to use it // ESP, AIMBOT, And Much More 
+🛑 Source code has nothing to do with the text. don't try to use it // ESP, AIMBOT, And Much More 
 
-
+***
  
   <p align="center">
     <a href="https://discord.gg/bzfWPSsDfR">
@@ -9,7 +9,7 @@
     </a>
 </p>
 
-***
+
 
 #### 💬 For Sell Cheating & Support  : [discord.gg/Sarnax](https://discord.com/invite/sarnax) 
 > ##### Discord : Sarnax#9999
