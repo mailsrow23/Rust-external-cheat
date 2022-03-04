@@ -16,6 +16,8 @@
 > - Craete Cheating Private // Spoofer and Source 
 > - Contact Discord to order.
 
+
+> -[ 💢 ] If you can't log in to the server, please add my friend because sometimes the invite link might be problematic.
 ***
 
 
