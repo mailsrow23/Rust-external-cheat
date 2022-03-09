@@ -11,7 +11,7 @@
 
 
 
-#### 💬 JOIN DISCORD : [CLICK FOR JOIN DISCORD ](https://discord.com/invite/sarnaxofficial)
+#### 💬 JOIN DISCORD : [CLICK FOR JOIN DISCORD ](https://discord.gg/2EhZ7VyYvA)
 ##### Discord : Sarnax#9999
 > - DM for buy Cheating Private & Source ( UD + Update Lifetime )
 > - come in to be the same society as us
