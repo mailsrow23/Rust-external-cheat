@@ -10,8 +10,7 @@
 </p>
 
 
-#### 💬 JOIN DISCORD : Sarnax#7522 (Contact via chat to request a discord server)
-> ##### Discord :Sarnax#7522
+#### 💬 JOIN DISCORD : [Sarnax](https://discord.com/users/943374631644045363)
 > - DM for buy Cheating Private & Source ( UD + Update Lifetime )
 > - come in to be the same society as us
 
