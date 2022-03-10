@@ -10,8 +10,8 @@
 </p>
 
 
-#### 💬 JOIN DISCORD : [Sarnax](https://discord.com/users/943374631644045363)
-> - DM for buy Cheating Private & Source ( UD + Update Lifetime )
+#### 💬 JOIN DISCORD : [Sarnax](https://discord.com/users/943374631644045363) ( You must add me as a friend. I will send you a link to the server. )
+> - DM for buy Cheating Private & Source
 > - come in to be the same society as us
 
 ***
