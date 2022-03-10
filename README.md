@@ -10,7 +10,7 @@
 </p>
 
 
-#### 💬 JOIN DISCORD : [JOIN DISCORD ](https://discord.gg/7Z6BDGmFRc) (The new server sits from the old one disabled.)
+#### 💬 JOIN DISCORD : Sarnax#7522 (Contact via chat to request a discord server)
 > ##### Discord :Sarnax#7522
 > - DM for buy Cheating Private & Source ( UD + Update Lifetime )
 > - come in to be the same society as us
