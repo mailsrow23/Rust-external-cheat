@@ -5,7 +5,7 @@
  
   <p align="center">
     <a href="https://discord.gg/7Z6BDGmFRc">
-        <img title="Sarnax discord" alt="SarnaxLii's discord" src="https://discord.c99.nl/widget/theme-5/943374631644045363.png"/>
+        <img title="Sarnax discord" alt="SarnaxLii's discord" src="https://discord.c99.nl/widget/theme-3/943374631644045363.png"/>
     </a>
 </p>
 
