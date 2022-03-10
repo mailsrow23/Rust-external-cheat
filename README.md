@@ -4,15 +4,14 @@
 ***
  
   <p align="center">
-    <a href="https://discord.gg/bzfWPSsDfR">
-        <img title="Sarnax discord" alt="SarnaxLii's discord" src="https://discord.c99.nl/widget/theme-4/582142955742298132.png"/>
+    <a href="https://discord.gg/7Z6BDGmFRc">
+        <img title="Sarnax discord" alt="SarnaxLii's discord" src="https://discord.c99.nl/widget/theme-5/943374631644045363.png"/>
     </a>
 </p>
 
 
-
-#### 💬 JOIN DISCORD : [CLICK FOR JOIN DISCORD ](https://discord.gg/2EhZ7VyYvA)
-##### Discord : Sarnax#9999
+#### 💬 JOIN DISCORD : [JOIN DISCORD ](https://discord.gg/7Z6BDGmFRc) (The new server sits from the old one disabled.)
+> ##### Discord :Sarnax#7522
 > - DM for buy Cheating Private & Source ( UD + Update Lifetime )
 > - come in to be the same society as us
 
