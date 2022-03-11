@@ -2,15 +2,14 @@
 > 🛑 Source code has nothing to do with the text. don't try to use it // ESP, AIMBOT, And Much More 
 
 ***
- 
   <p align="center">
-    <a href="https://discord.gg/7Z6BDGmFRc">
+    <a href="https://discord.com/users/943374631644045363">
         <img title="Sarnax discord" alt="SarnaxLii's discord" src="https://discord.c99.nl/widget/theme-3/943374631644045363.png"/>
     </a>
 </p>
 
 
-#### 💬 JOIN DISCORD : [Sarnax](https://discord.com/users/943374631644045363) ( You must add me as a friend. I will send you a link to the server. )
+#### 💬 JOIN DISCORD : [SARNAX SERVER](https://discord.com/users/943374631644045363) ( You must add me as a friend. I will send you a link to the server. )
 > - DM for buy Cheating Private & Source
 > - come in to be the same society as us
 
