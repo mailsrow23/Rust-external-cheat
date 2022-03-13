@@ -9,7 +9,7 @@
 </p>
 
 
-#### 💬 Join Discord & Support : [HEX SUPPORT](https://discord.com/users/943374631644045363) ( Add friends to request a link server )
+### 💬 Join Discord & Support : [HEX SUPPORT](https://discord.gg/FKRDs9QC48)
 > - DM for buy Cheating Private & Source
 > - come in to be the same society as us
 ***
