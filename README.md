@@ -1,7 +1,5 @@
 ### Rust Aimbot
-> 🛑 Source code has nothing to do with the text. don't try to use it // ESP, AIMBOT, And Much More 
 
-***
   <p align="center">
     <a href="https://discord.com/users/943374631644045363">
         <img title="Sarnax discord" alt="SarnaxLii's discord" src="https://discord.c99.nl/widget/theme-3/943374631644045363.png"/>
@@ -46,8 +44,3 @@ On YouTube, there are a lot of Rust hacks that you have to pay for (or it's a vi
 ![Skäwrmklipp](https://user-images.githubusercontent.com/94861415/152295463-5eb5acb7-cd7a-49eb-8d60-ebc5d11d5346.PNG)
 
 #### 6. now go into the game you want to hack and press inject wait 3 seconds it will say injector successful, and now you can have fun (if you use on ladder, you can only jump two more times whit it. If you do more, you will get banned from the server) 
-
-#### It is supposed to say kırekıd on TIPS (Use a kırekıd Rust) 
-
-
-
