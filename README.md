@@ -8,8 +8,6 @@
 
 
 ### 💬 Discord For Support : [HEX Community](https://discord.com/users/943374631644045363) (Add Friend For Invite Discord)
-
-#### DM For Buy Cheating Private & Source Dm Discord : Sarnax#7522
 > - We do not expect profit We hope you only get good things.
 ***
 
