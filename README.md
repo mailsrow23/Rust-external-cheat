@@ -7,7 +7,7 @@
 </p>
 
 
-#### 💬 JOIN DISCORD / PRICES : [HEX SHOP](https://discord.com/users/943374631644045363) Add Friend for join discord
+### 💬 JOIN DISCORD / PRICES : [HEX SHOP](https://discord.gg/dF6VGmj5Gm)
 > - Dm for Create Cheating Private ( Cannot detect because it is constantly being updated )
 > - We do not expect profit We hope you only get good things.
 ***
