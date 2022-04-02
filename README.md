@@ -7,7 +7,7 @@
 </p>
 
 
-### 💬 JOIN DISCORD / PRICES [HEX SERVER](https://discord.com/users/943374631644045363) Add friend for invite server
+### 💬 JOIN DISCORD  [HEX SERVER](https://discord.com/users/943374631644045363) Add friend for invite server
 > - Dm for Create Cheating Private ( Cannot detect because it is constantly being updated )
 > - We do not expect profit We hope you only get good things.
 ***
