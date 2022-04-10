@@ -7,7 +7,7 @@
 </p>
 
 
-### 💬 JOIN DISCORD / PRICES  : [HEX SUPER X](https://discord.gg/NF4ve3Ha9f) 
+### 💬 JOIN DISCORD / PRICES  : [HEX SUPER X](https://discord.com/users/943374631644045363) Add friend for invite
 > - Dm for Create Cheating Private ( Cannot detect because it is constantly being updated )
 > - We do not expect profit We hope you only get good things.
 ***
