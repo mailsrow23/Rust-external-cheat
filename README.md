@@ -7,7 +7,7 @@
 </p>
 
 
-### :speech_balloon: JOIN DISCORD / PRICES  : [HEX COMMUNITY](https://discord.gg/ry4TvAZNum)
+### :speech_balloon: JOIN DISCORD / PRICES  : [HEX COMMUNITY](https://discord.gg/T8AnBJ3ADS)
 > - Dm for Create Cheating Private ( Cannot detect because it is constantly being updated )
 > - We do not expect profit We hope you only get good things.
 ***
