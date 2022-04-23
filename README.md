@@ -1,4 +1,4 @@
-### Rust Aimbot
+### RUST AIMBOT
 ```
 RUST AIMBOT C++ INJECTOR .Dll 
 ```
