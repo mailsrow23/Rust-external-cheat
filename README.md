@@ -11,12 +11,12 @@ RUST AIMBOT C++ INJECTOR .Dll
 </p>
 
 <p align="center">
-    <a href="https://discord.gg/6ZdJwQ7Dmk">
+    <a href="https://discord.gg/S2NxQRvsvn">
         <img title="Sarnax discord" alt="SarnaxLii's discord" src="https://discordapp.com/api/guilds/928580076633739274/widget.png?style=banner2"/>
     </a>
 </p>
 
-### 📌・  JOIN DISCORD / SUPPORT : [HEX COMMUNITY](https://discord.com/users/943374631644045363) 
+### 📌・  JOIN DISCORD / SUPPORT : [HEX COMMUNITY](https://discord.gg/S2NxQRvsvn) 
 
 * `👋 SELL CHEATING PRIVATE / SPOOFER / SOURCE CODE / ETC `
 * ` UPDATE FREE LIFETIME & UD `
