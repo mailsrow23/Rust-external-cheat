@@ -17,7 +17,7 @@ RUST AIMBOT C++ INJECTOR .Dll
 </p>
 
 
-### 📌・   DISCORD SHOP : [HEX COMMUNITY](https://discord.gg/S2NxQRvsvn) 
+### 📌・   DISCORD / SHOP : [HEX COMMUNITY](https://discord.gg/S2NxQRvsvn) 
 
 * `👋 SELL CHEATING PRIVATE / SPOOFER / SOURCE CODE / ETC `
 * ` UPDATE FREE LIFETIME & UD `
