@@ -3,22 +3,16 @@
 RUST AIMBOT C++ INJECTOR .Dll 
 ```
 
- ***
+***
   <p align="center">
     <a href="https://discord.com/users/943374631644045363">
         <img title="Sarnax discord" alt="SarnaxLii's discord" src="https://discord.c99.nl/widget/theme-3/943374631644045363.png"/>
     </a>
 </p>
 
-<p align="center">
-    <a href="https://discord.gg/S2NxQRvsvn">
-        <img title="Sarnax discord" alt="SarnaxLii's discord" src="https://discordapp.com/api/guilds/928580076633739274/widget.png?style=banner2"/>
-    </a>
-</p>
 
+### 📌・ DISCORD : [HEX SERVER](https://discord.gg/JsxqNHgR4m) 
 
-### 📌・ DISCORD : [HEX PROJECT](https://discord.gg/fYnQePhkt7) / DM FOR BUY
-#### ・ Now we make the server private. when you buy our products you will be invited / We do this to prevent the server from being deleted.
 
 * `👋 SELL CHEATING PRIVATE / SPOOFER / SOURCE CODE / ETC `
 * ` UPDATE FREE LIFETIME & UD `
