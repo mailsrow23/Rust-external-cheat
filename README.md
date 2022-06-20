@@ -11,7 +11,7 @@ RUST AIMBOT C++ INJECTOR .Dll
 </p>
 
 
-### 🔔・ NEW DISCORD : [HEX SERVER](https://discord.gg/JsxqNHgR4m) 
+### 🔔・DISCORD : [HEX SERVER](https://discord.gg/7vVb9g7FGT) 
 
 
 * `👋 SELL CHEATING PRIVATE / SPOOFER / SOURCE CODE / ETC `
