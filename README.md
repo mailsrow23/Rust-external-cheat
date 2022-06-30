@@ -1,5 +1,5 @@
 ### RUST AIMBOT
-```
+```C
 RUST AIMBOT C++ INJECTOR .Dll 
 ```
 
@@ -11,7 +11,7 @@ RUST AIMBOT C++ INJECTOR .Dll
 </p>
 
 
-### 🔔・ DISCORD : [HEX SERVER](https://discord.gg/7vVb9g7FGT) 
+### 💬・DISCORD : [HEX COMMUNITY](https://discord.gg/7vVb9g7FGT) 
 
 
 * `👋 SELL CHEATING PRIVATE / SPOOFER / SOURCE CODE / ETC `
