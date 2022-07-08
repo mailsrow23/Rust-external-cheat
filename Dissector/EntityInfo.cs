@@ -32,5 +32,10 @@ namespace Dissector
         public GameObjectBase Entity { get; set; }     
         
         public string EntityName { get; set; }
+        
+        public float Render { get; set; }
+        {
+            
+        public float Injector { get; set; }       
     }
 }
