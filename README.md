@@ -11,21 +11,23 @@ RUST AIMBOT C++ INJECTOR .Dll
 </p>
 
 
-### ・💬 DISCORD JOIN : [HEX COMMUNITY](https://discord.gg/7vVb9g7FGT) 
-
-
-* `👋 SELL CHEATING PRIVATE / SPOOFER / SOURCE CODE / ETC `
-* ` UPDATE FREE LIFETIME & UD `
-* ` IF YOU WANT A SAFE CHEATING PRIVATE , THINK OF ME`
-* ` SAFE 100% IF BANNED = REFUND MONEY`
-* ` UPDATE LIFETIME & SUPPORT 24 HR `
-
-🐵・**We** have a backup server base and many main servers and we are **LEGIT**
- ```sh-session
-If you can't join the server please add me to invite discord server : Sarnax#7522
-```          
 ***
+ 
+###  <p align="center"> 💬・ DISCORD : [HEX COMMUNITY](https://discord.gg/7vVb9g7FGT) 
 
+
+* `👋 : CHEATING PRIVATE // SPOOFER // SOURCE CODE // ETC `
+* ` : UPDATE FREE & LIFETIME & UNDETECTED & BYPASS DRIVER , INJECTOR `
+* ` ✔️ : SAFE 100% IF BANNED = REFUND MONEY`
+* ` : WE GIVE YOU THE HIGHEST LEVEL OF SECURITY AND PRIVACY , DON'T WORRY`
+
+📝 **WEBSITE** ・[SARNAX.COM](https://sarnax.xyz)
+
+ ```sh-session
+・ YOU CAN PLAY ON THE MAIN ACCOUT. IT WON"T GET YOU BANNED :) / JOIN DISCORD FOR BUY ・
+```                
+
+***
 
 
 
