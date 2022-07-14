@@ -188,6 +188,29 @@ namespace Dissector
             }
             private set { }
         }
+        public unsafe long SteamID
+        {
+            get
+            {
+                if (_isNetworkableObject)
+                {
+                    if (_steamId == 0)
+                    {
+                        _steamId = KeeperOf.Memory.ReadMultiLevelLong(_objectAddressPtr, OffsetStructs.EntitySteamID.FromBaseNetworkablePath);
+                        return _steamId;
+                    }
+                    else
+                    {
+                        return _steamId;
+                    }
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            set { _steamId = value; }
+        }
 
         /// <summary>
         /// 
