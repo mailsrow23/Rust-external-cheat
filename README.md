@@ -1,8 +1,17 @@
 ### RUST AIMBOT [ OLD VERISON ] 
-```C
+```sh-session
 RUST AIMBOT C++ INJECTOR .Dll 
 ```
 
+### ❗ Read BEFORE USE
+
+・This is old version This may work for some people and some may not work Because we don't have time to develop and update it. because we sell products
+
+・It might not be safe because this is a Pubic version and some things we updated to make it work.
+
+```sh-session
+PLEASE FOLLOW ALL THE STEPS BELOW. IF YOU DONT UNDERSTAND , GO TO DISCORD TO HELP
+```
 ***
   <p align="center">
     <a href="https://discord.com/users/943374631644045363">
@@ -13,18 +22,20 @@ RUST AIMBOT C++ INJECTOR .Dll
 
 ***
  
-###  <p align="center"> 💬・ DISCORD : [HEX COMMUNITY](https://discord.gg/7vVb9g7FGT) 
+## 📕 DISCORD : [HEX PROJECT](https://discord.gg/7vVb9g7FGT) 
+
+* ` 🛒 Sell Cheating Private | Spoofer | Source code | Driver `
+* ` 📌: Update Free | Undetected ` 
+
+### 🤓 Services 
+
+* ` Product Warranty | If banned = Refund | Spoofer not working = Refund `
 
 
-* `👋 : CHEATING PRIVATE // SPOOFER // SOURCE CODE // ETC `
-* ` : UPDATE FREE & LIFETIME & UNDETECTED & BYPASS DRIVER , INJECTOR `
-* ` ✔️ : SAFE 100% IF BANNED = REFUND MONEY`
-* ` : WE GIVE YOU THE HIGHEST LEVEL OF SECURITY AND PRIVACY , DON'T WORRY`
-
-📝 **WEBSITE** ・[SARNAX.COM](https://sarnax.xyz)
+#### 📝 WEBSITE [SARNAX.COM](https://sarnax.xyz)
 
  ```sh-session
-・ YOU CAN PLAY ON THE MAIN ACCOUT. IT WON"T GET YOU BANNED :) / JOIN DISCORD FOR BUY ・
+・ OUR CHEATING PRIVATE CAN PLAY MAIN ACCOUNT WITHOUT GETTING BANNED / JOIN DISCORD FOR BUY  ・
 ```                
 
 ***
