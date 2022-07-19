@@ -22,7 +22,7 @@ PLEASE FOLLOW ALL THE STEPS BELOW. IF YOU DONT UNDERSTAND , GO TO DISCORD TO HEL
 
 ***
  
-### 💬 DISCORD ・ [HEX COMMUNITY](https://discord.gg/7vVb9g7FGT) 
+### 💬 DISCORD ・ [HEX PROJECT](https://discord.gg/MBTkVcJefp) 
 
 * ` 🛒 Sell Cheating Private | Spoofer | Source code | Driver `
 * ` 📌: Update Free | Undetected ` 
