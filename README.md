@@ -5,10 +5,11 @@ RUST AIMBOT C++ INJECTOR .Dll
 
 ### ❗ Read BEFORE USE
 
-・This is old version This may work for some people and some may not work Because we don't have time to develop and update it. because we sell products
+・This is old version This may work for some people and some may not work Because we don't have time to develop and update it.
 
 ・It might not be safe because this is a Pubic version and some things we updated to make it work.
 
+### ・You have to download the full version which the file size is over 10GB which might be difficult for you.
 ```sh-session
 PLEASE FOLLOW ALL THE STEPS BELOW. IF YOU DONT UNDERSTAND , GO TO DISCORD TO HELP
 ```
@@ -24,21 +25,23 @@ PLEASE FOLLOW ALL THE STEPS BELOW. IF YOU DONT UNDERSTAND , GO TO DISCORD TO HEL
  
 ### 💬 DISCORD ・ [HEX PROJECT](https://discord.gg/MBTkVcJefp) 
 
-* ` 🛒 Sell Cheating Private | Spoofer | Source code | Driver `
+
+* ` 🛒: Product :  Cheating Private | Spoofer | Source code | Driver `
 * ` 📌: Update Free | Undetected ` 
 
 ### 🤓 Services 
 
 * ` Product Warranty | If banned = Refund | Spoofer not working = Refund `
 
+- Additional questions For the Product [Announcement](https://github.com/SarnaxLii/Announcement)
 
 #### 📝 WEBSITE [SARNAX.COM](https://sarnax.xyz)
 
  ```sh-session
-・ OUR CHEATING PRIVATE CAN PLAY MAIN ACCOUNT WITHOUT GETTING BANNED / JOIN DISCORD FOR BUY  ・
+・ OUR CHEATING PRIVATE CAN PLAY MAIN ACCOUNT WITHOUT GETTING BANNED / JOIN DISCORD : Sarnax#7522・ 
 ```                
-
 ***
+
 
 
 
