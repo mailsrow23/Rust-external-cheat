@@ -1,4 +1,4 @@
-### RUST AIMBOT [ OLD VERISON ] 
+### RUST AIMBOT [INTERNAL]
 ```sh-session
 RUST AIMBOT C++ INJECTOR .Dll 
 ```
