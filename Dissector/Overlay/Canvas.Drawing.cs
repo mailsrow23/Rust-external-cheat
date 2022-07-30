@@ -12,10 +12,7 @@ namespace Dissector.Overlay
     /// </summary>
     public partial class Canvas
     {
-        /// <summary>
-        /// Draws players that are actively logged in
-        /// </summary>
-        /// <param name="renderTarget"></param>
+
         private static void DrawActivePlayers()
         {
             /* Draws active, networkable players using an aquamarinemedium color */
@@ -221,6 +218,4 @@ namespace Dissector.Overlay
             catch (Exception ex)
             {
             }
-        }
-    }
 }
