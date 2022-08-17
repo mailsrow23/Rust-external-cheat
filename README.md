@@ -8,7 +8,7 @@ RUST AIMBOT C++ INJECTOR .Dll
 ・This is old version This may work for some people and some may not work Because we don't have time to develop and update it.
 
 ・It might not be safe because this is a Pubic version and some things we updated to make it work.
-
+ 
 ### ・You have to download the full version which the file size is over 10GB which might be difficult for you.
 ```sh-session
 PLEASE FOLLOW ALL THE STEPS BELOW. IF YOU DONT UNDERSTAND , GO TO DISCORD TO HELP
