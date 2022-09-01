@@ -2,7 +2,7 @@
 ```sh-session
 RUST AIMBOT C++ INJECTOR .Dll 
 ```
-
+ 
 ### ❗ Read BEFORE USE  
 
 ・This is old version This may work for some people and some may not work Because we don't have time to develop and update it.
