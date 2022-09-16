@@ -4,6 +4,40 @@
 #pragma comment( linker, "/merge:.pdata=.rdata" )
 #pragma comment( linker, "/merge:.rdata=.text" )
 
+
+HWND WINAPI InitializeWin(HINSTANCE hInst) {
+
+	wndClass.cbSize = sizeof(WNDCLASSEX);
+	wndClass.cbClsExtra = NULL;
+	wndClass.cbWndExtra = NULL;
+	wndClass.hCursor = LoadCursor(0, IDC_ARROW);
+	wndClass.hIcon = LoadIcon(0, IDI_APPLICATION);
+	wndClass.hIconSm = LoadIcon(0, IDI_APPLICATION);
+	wndClass.hbrBackground = (HBRUSH)CreateSolidBrush(RGB(0, 0, 0));
+	wndClass.hInstance = hInst;
+	wndClass.lpfnWndProc = WindowProc;
+	wndClass.lpszClassName = " ";
+	wndClass.lpszMenuName = " ";
+	wndClass.style = CS_VREDRAW | CS_HREDRAW;
+
+	if (!RegisterClassEx(&wndClass)) {
+		exit(1);
+	}
+
+	Globals::hWnd = CreateWindowEx(WS_EX_TOPMOST | WS_EX_TRANSPARENT | WS_EX_LAYERED, " ", " ", WS_POPUP, 1, 1, Globals::rWidth, Globals::rHeight, 0, 0, 0, 0);
+
+	SetLayeredWindowAttributes(Globals::hWnd, RGB(0, 0, 0), 255, LWA_ALPHA);
+	MARGINS margin = { -1 };
+	DwmExtendFrameIntoClientArea(Globals::hWnd, &margin);
+
+	D3DInitialize(Globals::hWnd);
+	ImGuiIO& io = ImGui::GetIO();
+	
+	return Globals::hWnd;
+}
+
+
+
 extern "C"
 {
 
@@ -81,10 +115,7 @@ namespace hooks {
 		static auto OnNetworkMessage = reinterpret_cast<void (*)(uintptr_t, uintptr_t)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("Client"), _("OnNetworkMessage"), 1, _(""), _(""))));
 		static auto IsConnected = reinterpret_cast<bool (*)(uintptr_t)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("Client"), _("IsConnected"), 0, _(""), _("Network"))));
 		static auto Run = reinterpret_cast<rust::classes::string (*)(uintptr_t, uintptr_t, rust::classes::string, uintptr_t)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("ConsoleSystem"), _("Run"), 3, _(""), _(""))));
-
-		uintptr_t playerprojectileattack;
-		uintptr_t serverrpc_projectileshoot;
-		uintptr_t serverrpc_processattack;
+		
 	}
 
 	static auto serverrpc_projecileshoot = rb::pattern::find_rel(
