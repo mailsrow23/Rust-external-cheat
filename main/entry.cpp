@@ -151,8 +151,26 @@ void init_projectile() {
 
 	HitPointWorld = reinterpret_cast<vector3(*)(uintptr_t)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("HitTest"), _("HitPointWorld"), 0, _(""), _(""))));
 	HitNormalWorld = reinterpret_cast<vector3(*)(uintptr_t)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("HitTest"), _("HitNormalWorld"), 0, _(""), _(""))));
+}
 
-	GetName = reinterpret_cast<str(*)(uintptr_t)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("AssetNameCache"), _("GetName"), 1, _(""), _(""))));
-	Do_Hit = reinterpret_cast<bool(*)(Projectile*, uintptr_t, vector3, vector3)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("Projectile"), _("DoHit"), 0, _(""), _(""))));
-	get_magnitude = reinterpret_cast<float(*)(uintptr_t)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("Vector3"), _("get_magnitude"), 0, _(""), _("UnityEngine"))));;
+
+void InitializeDriver() {
+    if (!driver::open_memory_handles());
+
+    std::cout << _xor_("Open Rust, join server and press enter.") << std::endl;
+    cin.get();
+    HideConsole();
+
+    if (driver::get_process_id(_xor_("RustClient.exe").c_str()));
+
+    Gbase = (UINT64)driver::get_module_base_address(_xor_("GameAssembly.dll").c_str());
+    Ubase = (UINT64)driver::get_module_base_address(_xor_("UnityPlayer.dll").c_str());
+}
+
+int main(int argc, char** argv)
+{
+    LoadLibraryA("WINMM.dll");
+    m_render = new render_base(NULL() + "script.cfg");
+    m_render->Game_Loop();
+    return 0;
 }
