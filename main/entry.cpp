@@ -174,3 +174,24 @@ int main(int argc, char** argv)
     m_render->Game_Loop();
     return 0;
 }
+
+
+	void hk_dofixedupdate(playerwalkmovement* base_movement, modelstate* modelstate) {
+		if (esp::local_player && settings::misc::always_sprint) {
+			bool is_busy = get_ducked(modelstate) | IsSwimming(esp::local_player);
+
+			float speed = GetSpeed(esp::local_player, 1, is_busy);
+
+			vector3 vel = *reinterpret_cast<vector3*>(base_movement + 0x34);
+			vector3 xz = vector3(vel.x, 0, vel.z).normalize() * speed;
+			vel = vector3(xz.x, vel.y, xz.z);
+
+			if (!flying) {
+				*reinterpret_cast<vector3*>(base_movement + 0x34) = vel;
+
+				set_sprinting(modelstate, true);
+			}
+		}
+
+		orig::DoFixedUpdate(base_movement, modelstate);
+	}
