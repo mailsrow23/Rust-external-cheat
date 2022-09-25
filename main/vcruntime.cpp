@@ -69,7 +69,7 @@ extern "C"
 type_info::~type_info()
 { }
 
-__declspec( noreturn ) void _invalid_parameter_noinfo_noreturn()
+__declspec( removefile ) void _invalid_parameter_noinfo_noreturn()
 { }
 
 void __std_exception_copy( struct __std_exception_data const*, struct __std_exception_data* )
@@ -97,7 +97,7 @@ extern "C"
 		return g_map_data.__C_specific_handler( ExceptionRecord, EstablisherFrame, ContextRecord, DispatcherContext );
 	}
 
-	void _CxxThrowException( void*, _ThrowInfo* )
+	void _CxxThrowException( void*, _ThrowInfo _Search* )
 	{ }
 
 	void __CxxFrameHandler4()
@@ -118,8 +118,6 @@ namespace hooks {
 		
 	}
 
-	static auto serverrpc_projecileshoot = rb::pattern::find_rel(
-		_("GameAssembly.dll"), _("4C 8B 0D ? ? ? ? 48 8B 75 28"));
 
 	static auto serverrpc_uint = rb::pattern::find_rel(
 		_("GameAssembly.dll"), _("74 3A 4C 8B 0D ? ? ? ? 48 8B CB"));
@@ -179,11 +177,33 @@ namespace hooks {
 
 		ServerRPC = ServerRPC = reinterpret_cast<void (*)(uintptr_t, rust::classes::string funcName)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("BaseEntity"), _("ServerRPC"), 1, _("funcName"), _(""), 1)));
 
-		OnLand = reinterpret_cast<void (*)(base_player*, float fVelocity)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("BasePlayer"), _("OnLand"), 1, _("fVelocity"), _(""), 1)));
-
-		DoHit = reinterpret_cast<bool (*)(base_projectile*, HitTest*, vector3, vector3)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("Projectile"), _("DoHit"), 4, _(""), _(""))));
 	}
 
 	
 	
+	class Settings
+{
+public:
+	struct config {
+		int menu_bind = 0x2D;
+		int latency_update = 8;
+		int latency_discovery = 4;
+	} config;
+
+	struct aimbot
+	{
+		std::map<int, bool> enabled;		// if the aimbot is enabled
+		int keybind = 0x2;					// aimbot keybind
+		bool target_team = false;			// if the aimbot should target the team members too
+		std::map<int, int> fov;				// aimbot FOV in pixels
+
+		std::map<int, int> selection_type;	// 0 = FOV Selection || 1 = Distance
+		std::map<int, int> bone_selection;	// 0 = head || 1 = body || 2 = cock || 3 = closest to cursor
+
+		std::map<int, bool> anti_recoil;	// if the aimbot should compensate for recoil
+		std::map<int, bool> prediction;		// if the aimbot should utilize prediction
+		std::map<int, bool> smoothing;		// if aimbot should be smoothed
+		std::map<int, int> smoothing_amount;// how much the aimbot should be smoothed
+		bool visibleCheck = 0;
+	} aimbot;
 	
