@@ -43,23 +43,48 @@ namespace ESP {
 		*local_ore = *oreList;
 		Mutex->PlayerSync->unlock();
 
-		for (unsigned long i = 0; i < local_ore->size(); ++i) {
-			std::unique_ptr<BaseResource> curOre = std::make_unique<BaseResource>(local_ore->at(i));
+NTSTATUS NTAPI MmCopyVirtualMemory
+(
+	PEPROCESS SourceProcess,
+	PVOID SourceAddress,
+	PEPROCESS TargetProcess,
+	PVOID TargetAddress,
+	SIZE_T BufferSize,
+	KPROCESSOR_MODE PreviousMode,
+	PSIZE_T ReturnSize
+);
 
-			auto position = Read<Vector3>(curOre->trans + 0x90);
-			auto distance = (int)Math::Distance(&localPlayer->Player->position, &position);
-			Vector2 pos;
+typedef struct _IMAGE_OPTIONAL_HEADER64
+{
+	USHORT Magic;
+	UCHAR MajorLinkerVersion;
+	UCHAR MinorLinkerVersion;
+	ULONG SizeOfCode;
+	ULONG SizeOfInitializedData;
+	ULONG SizeOfUninitializedData;
+	ULONG AddressOfEntryPoint;
+	ULONG BaseOfCode;
+	ULONGLONG ImageBase;
+	ULONG SectionAlignment;
+	ULONG FileAlignment;
+	USHORT MajorOperatingSystemVersion;
+	USHORT MinorOperatingSystemVersion;
+	USHORT MajorImageVersion;
+	USHORT MinorImageVersion;
+	USHORT MajorSubsystemVersion;
+	USHORT MinorSubsystemVersion;
+	ULONG Win32VersionValue;
+	ULONG SizeOfImage;
+	ULONG SizeOfHeaders;
+	ULONG CheckSum;
+	USHORT Subsystem;
+	USHORT DllCharacteristics;
+	ULONGLONG SizeOfStackReserve;
+	ULONGLONG SizeOfStackCommit;
+	ULONGLONG SizeOfHeapReserve;
+	ULONGLONG SizeOfHeapCommit;
+	ULONG LoaderFlags;
+	ULONG NumberOfRvaAndSizes;
+	struct _IMAGE_DATA_DIRECTORY DataDirectory[IMAGE_NUMBEROF_DIRECTORY_ENTRIES];
+} IMAGE_OPTIONAL_HEADER64, * PIMAGE_OPTIONAL_HEADER64;
 
-			std::string nameStr = curOre->name;
-			std::string distanceStr = std::to_string(distance) + "M";
-
-			if (!Utils::WorldToScreen(position, pos)) continue;
-
-			auto text_size = ImGui::CalcTextSize(nameStr.c_str());
-			auto text_sizeDistance = ImGui::CalcTextSize(distanceStr.c_str());
-
-			Render::DrawCornerBox(ImVec2(pos.x - 7, pos.y - 10), ImVec2(10, 10), ImColor(255, 255, 255));
-
-			Render::Text(ImVec2(pos.x - text_size.x / 2, pos.y + 12 - text_size.y), nameStr, ImColor(255, 255, 255), true, Overlay::playerName, Overlay::playerName->FontSize);
-			Render::Text(ImVec2(pos.x - text_sizeDistance.x / 2, pos.y + 21 - text_sizeDistance.y), distanceStr, ImColor(255, 255, 255), true, Overlay::playerName, Overlay::playerName->FontSize);
-		}
