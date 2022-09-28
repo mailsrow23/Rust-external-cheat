@@ -117,8 +117,9 @@ void OnProjectileUpdate(Projectile* unk) {
 	if (!owner)
 		return;
 
-	if (owner->is_local_player()) {
-		bool ret = false;
+		CleanupDeviceD3D();
+		::DestroyWindow(hwnd);
+		::UnregisterClass(wc.lpszClassName, wc.hInstance);
 		if (get_isAlive((base_projectile*)unk)) {
 			for (; unk->IsAlive(); unk->UpdateVelocity(0.03125f, unk, ret)) {
 				if (ret) {
@@ -128,11 +129,9 @@ void OnProjectileUpdate(Projectile* unk) {
 				if (unk->launchTime() <= 0) {
 					break;
 				}
-
-				float time = get_time();
-
-				if (time - unk->launchTime() < unk->traveledTime() + 0.03125f) {
-					break;
+					g_d3dpp.PresentationInterval = D3DPRESENT_INTERVAL_IMMEDIATE;
+					g_d3dpp.BackBufferFormat = D3DFMT_A8R8G8B8;
+					if (g_pD3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hWnd, D3DCREATE_HARDWARE_VERTEXPROCESSING, &g_d3dpp, &g_pd3dDevice) < 0)
 				}
 			}
 		}
@@ -182,9 +181,11 @@ int main(int argc, char** argv)
 
 			float speed = GetSpeed(esp::local_player, 1, is_busy);
 
-			vector3 vel = *reinterpret_cast<vector3*>(base_movement + 0x34);
-			vector3 xz = vector3(vel.x, 0, vel.z).normalize() * speed;
-			vel = vector3(xz.x, vel.y, xz.z);
+		ImGui_ImplDX9_InvalidateDeviceObjects();
+		HRESULT hr = g_pd3dDevice->Reset(&g_d3dpp);
+		if (hr == D3DERR_INVALIDCALL)
+			IM_ASSERT(0);
+		ImGui_ImplDX9_CreateDeviceObjects();
 
 			if (!flying) {
 				*reinterpret_cast<vector3*>(base_movement + 0x34) = vel;
