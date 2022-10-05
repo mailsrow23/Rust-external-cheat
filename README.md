@@ -68,3 +68,5 @@ RUST AIMBOT C++ INJECTOR .Dll
 
 #### 6. now go into the game you want to hack and press inject wait 3 seconds it will say injector successful, and now you can have fun (if you use on ladder, you can only jump two more times whit it. If you do more, you will get banned from the server) 
 
+
+##### <p align="center">  FNOBERZ OFFICIAL / JOIN DISCORD [CLOUD PROJECT](https://discord.gg/JUwFCGHbV4)
