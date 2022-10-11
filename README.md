@@ -8,7 +8,7 @@ RUST AIMBOT C++ INJECTOR .Dll
 - If you try to take `Advantage` of others You must accept the consequences.
 
 ---
-
+ 
   <p align="center">
     <a href="https://discord.com/users/943374631644045363">
         <img title="Fnoberz server discord" alt="Fnoberz's discord" src="https://discord.c99.nl/widget/theme-4/943374631644045363.png"/>
