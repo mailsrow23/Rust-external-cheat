@@ -1,7 +1,9 @@
-### RUST AIMBOT [INTERNAL]
-```sh-session
-RUST AIMBOT C++ INJECTOR .Dll 
-```
+### RUST AIMBOT
+![sadasd](https://img.shields.io/badge/EXE-EFA00B?style=for-the-badge&logo=IntelliJ+IDEA&logoColor=black)
+![asfasf](https://img.shields.io/badge/-Windows-28C2FF?style=for-the-badge&logo=windows&logoColor=black)
+![asdas](https://img.shields.io/badge/INstall_EXE-372248?style=for-the-badge&logo=mysql&logoColor=white)
+
+
  
 ### ❌〢 HEY BRO !
 - Use at your own risk | Scroll down to learn how to use it.
