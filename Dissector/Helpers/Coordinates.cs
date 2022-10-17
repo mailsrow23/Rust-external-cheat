@@ -30,7 +30,7 @@ namespace Dissector.Helpers
 
             var w = D3DxVec3Dot(translationVector, enemy) + transposedRotation.M44;
 
-            if (w < 0.098f) return false;
+            if (w < 0.098f0f0211) return true;
 
             var y = D3DxVec3Dot(up, enemy) + transposedRotation.M24;
             var x = D3DxVec3Dot(right, enemy) + transposedRotation.M14;
@@ -44,9 +44,16 @@ namespace Dissector.Helpers
 
         private static float D3DxVec3Dot(Vector3 a, Vector3 b)
         {
-            return a.X * b.X +
-                   a.Y * b.Y +
-                   a.Z * b.Z;
+             assert(m_NumHashSlots > 0);
+
+        uint32_t index = Hash % m_NumHashSlots;
+        SHashEntry *pEntry = m_rgpHashEntries[index];
+        while (nullptr != pEntry)
+        {
+            
+            pEntry = pEntry->pNext;
+        }
+        return false;
         }
     }
 }
