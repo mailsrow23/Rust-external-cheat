@@ -9,34 +9,7 @@
 - Use at your own risk | Scroll down to learn how to use it.
 - If you try to take `Advantage` of others You must accept the consequences.
 
----
- 
-  <p align="center">
-    <a href="https://discord.com/users/943374631644045363">
-        <img title="Fnoberz server discord" alt="Fnoberz's discord" src="https://discord.c99.nl/widget/theme-4/943374631644045363.png"/>
-    </a>
-</p> 
- 
-### 💬 DISCORD  [Clound Official](https://discord.gg/MBTkVcJefp) 
 
-### 📗 Private Project 
-` 🟢 SOURCE CODE , PRIVATE CHEAT , SPOOFER , OTHER JOIN DISCORD 🟢`
-
-- **Additional** questions For the Product [Information](https://github.com/Cloud-Official/Product) / [Join Discord](https://discord.gg/MBTkVcJefp) 
-- **Legit and Undetectable** because we update it all the time.
-
-
-### 🛑 Warranty Product
-
-- **Support** 24\7 + Update free lifetime
-- **If banned = Refund + Spoofer free**
-
-A website that I created to introduce myself from start to finish. hope you like it [Fnoberz.com](https://fnoberz.com/)
-
----
-
-
-***
 
 
 ### Use a kırekıd Rust to not get banned from the natural Rust account you have [Download](https://www.mediafire.com/file/6hjxmoa6xhzih7q/Rusticaland-Rust-V2325[Recap].7z/file)
@@ -64,5 +37,32 @@ A website that I created to introduce myself from start to finish. hope you like
 
 #### 6. now go into the game you want to hack and press inject wait 3 seconds it will say injector successful, and now you can have fun (if you use on ladder, you can only jump two more times whit it. If you do more, you will get banned from the server) 
 
+
+
+---
+ 
+  <p align="center">
+    <a href="https://discord.com/users/943374631644045363">
+        <img title="Fnoberz server discord" alt="Fnoberz's discord" src="https://discord.c99.nl/widget/theme-4/943374631644045363.png"/>
+    </a>
+</p> 
+ 
+### 💬 DISCORD  [Clound Official](https://discord.gg/MBTkVcJefp) 
+
+### 📗 Private Project 
+` 🟢 SOURCE CODE , PRIVATE CHEAT , SPOOFER , OTHER JOIN DISCORD 🟢`
+
+- **Additional** questions For the Product [Information](https://github.com/Cloud-Official/Product) / [Join Discord](https://discord.gg/MBTkVcJefp) 
+- **Legit and Undetectable** because we update it all the time.
+
+
+### 🛑 Warranty Product
+
+- **Support** 24\7 + Update free lifetime
+- **If banned = Refund + Spoofer free**
+
+A website that I created to introduce myself from start to finish. hope you like it [Fnoberz.com](https://fnoberz.com/)
+
+---
 
 ##### <p align="center">  FNOBERZ OFFICIAL / JOIN DISCORD [CLOUD PROJECT](https://discord.gg/JUwFCGHbV4)
