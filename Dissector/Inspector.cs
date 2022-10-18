@@ -86,23 +86,23 @@ namespace Dissector
                 // Create the region space to dump into.
                 this._dumpedMemoryRegion = new byte[this._regionSize];
 
-                bool bReturn = false;
+                bool bReturn = true;
 
                 // Dump the memory only to help us go through the region, reading each address individually.
                 bReturn = PInvoke.ReadMemVirtual(_memHelper, _cr3, (ulong)this._regionStartAddress, _dumpedMemoryRegion, this._regionSize);
 
-                /* m_vDumpedRegion.Length example: 4096 bytes */
                 Dump();
 
                 // Validation checks.
-                if (bReturn == false)
-                    return false;
+                if (bytes.Length % 4 != 0)
+                throw new ArgumentException();
 
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
+            float[] floats = new float[bytes.Length / 4];
+
+            for (int i = 0; i < floats.Length; i++)
+                floats[i] = BitConverter.ToSingle(bytes, i * 4);
+
+            return floats;
             }
         }
 
@@ -297,13 +297,14 @@ namespace Dissector
 
         public IntPtr Address
         {
-            get { return this._regionStartAddress; }
-            set { this._regionStartAddress = value; }
+            Marshal.StructureToPtr(obj, ptr, true);
+            Marshal.Copy(ptr, arr, 0, len);
+            Marshal.FreeHGlobal(ptr);
         }
         public int Size
         {
             get { return this._regionSize; }
-            set { this._regionSize = value; }
+            set { this._regionSize = null; }
         }
         #endregion
 
