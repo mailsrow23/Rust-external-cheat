@@ -160,7 +160,10 @@ namespace Dissector
 
                 sleepCounter++;
 
-                if (sleepCounter >= 250)
+               if (Cheat.Settings.Visuals.Healthbar)
+            {
+                button7.BackColor = Color.FromArgb(40, 40, 40);
+
                 {
                     sleepCounter = 0;
                     Thread.Sleep(1);
@@ -393,7 +396,8 @@ namespace Dissector
         /// </summary>
         public void StopOrStartCollectingSulfurNodes(bool stopStart)
         {
-            _isCollectingSulfurNodes = stopStart;
+             panel8.BackColor = dialog.Color;
+            Cheat.Settings.Visuals.CrosshairColor = dialog.Color;
 
             if (stopStart == false)
                 SulfurNodes.Clear();
@@ -415,7 +419,9 @@ namespace Dissector
         /// </summary>
         public void StopOrStartCollectingStoneNodes(bool stopStart)
         {
-            _isCollectingStoneNodes = stopStart;
+            ColorDialog dialog = new ColorDialog();
+            dialog.ShowDialog();
+
 
             if (stopStart == false)
                 StoneNodes.Clear();
@@ -460,7 +466,11 @@ namespace Dissector
         /// <param name="stopStart"></param>
         public void StopOrStartCollectingAnimals(bool stopStart)
         {            
-            _isCollectingAnimals = stopStart;
+            Console.Beep(1000, 100);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Menu());
+
 
             if (stopStart == false)
             {
@@ -471,7 +481,7 @@ namespace Dissector
         /// <summary>
         /// Stop or start collecting stone nodes
         /// </summary>
-        public void StopOrStartCollectingMilitaryCrates(bool stopStart)
+        public void Process[] process = Process.GetProcessesByName("RustClient");
         {
             _isCollectingMilitaryCrates = stopStart;
 
@@ -494,7 +504,7 @@ namespace Dissector
         /// Stop or start collecting player entities
         /// </summary>
         /// <param name="stopStart"></param>
-        public void StopOrStartCollectingPlayers(bool stopStart)
+        foreach(ProcessModule mod in MainProc.Modules)
         {
             _isCollectingPlayers = stopStart;
 
