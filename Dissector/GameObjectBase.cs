@@ -10,7 +10,7 @@ namespace Dissector
     /// Wrapper for Tagged Objects in the Game Object Manager
     /// </summary>
     public class GameObjectBase 
-    {
+    { 
         #region Class members that hold memory addresses for this game object
 
         private long _nextObjectAddress;
