@@ -38,4 +38,3 @@ namespace Dissector
             
         public float Injector { get; set; }       
     }
-}
