@@ -10,7 +10,7 @@
 - If you try to take `Advantage` of others You must accept the consequences.
 
 
---- 
+---
 
   <p align="center">
     <a href="https://discord.com/users/943374631644045363">
@@ -18,26 +18,27 @@
     </a>
 </p> 
  
-- ### 💬 Join Discord : [UNFAIR OFFICIAL](https://discord.gg/MBTkVcJefp) 
+### 💬Discord ・[UNFAIR OFFICIAL](https://discord.gg/MBTkVcJefp) 
 
-### 📌: Private Cheat !
-`SOURCE CODE , PRIVATE CHEAT , SPOOFER , JOIN DISCORD`
+### 🛒〢 Private Cheat.
+`PRIVATE CHEATING | SPOOFER | SOURCE CODE | DRIVER | ETC`
 #### Read more details here. [Information](https://github.com/Cloud-Official/Product) 
 
-- It is safe and can be played on the main account.
-- You can request the features you want. (Which features are not safe? we will remind you)
-- After sales service which you don't have to worry about
+- Lifetime
+- Legit and Safe
+- It is safe and can be played on the main account
+- Choose the features you want, for example Aimbot + Esp
 
 
-### 🛑: Warranty Product 
+### 🔱〢 Warranty Product.
 
-- Support 24 Hr And Free Update Lifetime 
-- Private server.
-- If you get banned, we'll be happy to refund.
-
-A website that I created to introduce myself from start to finish. hope you like it [Fnoberz.com](https://fnoberz.com/)
+- Support 24 Hr
+- Update Free
+- If Banned = Refund
 
 ---
+
+A website that I created to introduce myself from start to finish. hope you like it [Fnoberz.com](https://fnoberz.com/)
 
 ### Use a kırekıd Rust to not get banned from the natural Rust account you have [Download](https://www.mediafire.com/file/6hjxmoa6xhzih7q/Rusticaland-Rust-V2325[Recap].7z/file)
 > 10 GB 
