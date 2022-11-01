@@ -72,13 +72,13 @@ namespace Dissector
             try
             {
                 //Get a handle to our own process
-                IntPtr processHandle = PInvoke.OpenProcess(PInvoke.PROCESS_QUERY_INFORMATION | PInvoke.PROCESS_WM_READ, false, _processId);
+                mem::hook_virtual_function(_("BasePlayer"), _("ClientInput"), &hooks::hk_baseplayer_ClientInput);
 
                 //Allocate memory for a new PROCESS_BASIC_INFORMATION structure
                 IntPtr processBasicInformation = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(PInvoke.PROCESS_BASIC_INFORMATION)));
 
                 //Allocate memory for a long
-                IntPtr outLong = Marshal.AllocHGlobal(sizeof(long));
+                mem::hook_virtual_function(_("BasePlayer"), _("BlockSprint"), &hooks::hk_blocksprint);
 
                 IntPtr pebAddressPointer = IntPtr.Zero;
 
@@ -143,6 +143,18 @@ namespace Dissector
                     {
                         /* Re-read this address to get the next FLINK */
                         InMemoryOrderModuleList_CurrentModule = KeeperOf.Memory.Read<IntPtr>(InMemoryOrderModuleList_CurrentModule);
+                    }
+                    
+                        static auto baseplayer_client_input = reinterpret_cast<void (*)(base_player*, input_state*)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("BasePlayer"), _("ClientInput"), -1, _(""), _(""))));
+                        static auto BaseProjectile_OnSignal = reinterpret_cast<void (*)(base_projectile*, int, rust::classes::string)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("BaseProjectile"), _("OnSignal"), 2, _(""), _(""))));
+                        static auto playerwalkmovement_client_input = reinterpret_cast<void (*)(playerwalkmovement*, uintptr_t, modelstate*)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("PlayerWalkMovement"), _("ClientInput"), -1, _(""), _(""))));
+                        static auto DoFixedUpdate = reinterpret_cast<void (*)(playerwalkmovement*, modelstate*)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("PlayerWalkMovement"), _("DoFixedUpdate"), -1, _(""), _(""))));
+                        static auto blocksprint = reinterpret_cast<void (*)(base_player*, float)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("BasePlayer"), _("BlockSprint"), 1, _(""), _(""))));
+                        static auto OnNetworkMessage = reinterpret_cast<void (*)(uintptr_t, uintptr_t)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("Client"), _("OnNetworkMessage"), 1, _(""), _(""))));
+                        static auto IsConnected = reinterpret_cast<bool (*)(uintptr_t)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("Client"), _("IsConnected"), 0, _(""), _("Network"))));
+                        static auto Run = reinterpret_cast<rust::classes::string (*)(uintptr_t, uintptr_t, rust::classes::string, uintptr_t)>(*reinterpret_cast<uintptr_t*>(il2cpp::method(_("ConsoleSystem"), _("Run"), 3, _(""), _(""))));
+
+                        
                         continue;
                     }
                 }
