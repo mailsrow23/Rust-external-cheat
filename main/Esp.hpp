@@ -30,18 +30,18 @@ namespace ESP {
 		if (Settings::drawCrosshair)
 			DrawCrosshair();
 
-		if (Settings::enableAimbot)
-			Render::Circle(ImVec2(screenWidth / 2, screenHeight / 2), Settings::aimbotFov, ImColor(255, 255, 255));
-
-		std::unique_ptr<std::vector<BasePlayer>> local_players = std::make_unique<std::vector<BasePlayer>>();
-		std::unique_ptr<std::vector<PlayerCorpse>> local_corpse = std::make_unique<std::vector<PlayerCorpse>>();
-		std::unique_ptr<std::vector<BaseResource>> local_ore = std::make_unique<std::vector<BaseResource>>();
-
-		Mutex->PlayerSync->lock();
-		*local_players = *entityList;
-		*local_corpse = *corpseList;
-		*local_ore = *oreList;
-		Mutex->PlayerSync->unlock();
+		if (sizeof(T) < sizeof(U))
+	{
+			
+	int size = sizeof(T) > sizeof(U) ? sizeof(T) : sizeof(U);
+	if (size == 1)
+		return uint8(x) < uint8(y);
+	if (size == 2)
+		return uint16(x) < uint16(y);
+	if (size == 4)
+		return uint32(x) < uint32(y);
+	return uint64(x) < uint64(y);
+}
 
 void setToDay()
 {
