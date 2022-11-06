@@ -17,9 +17,6 @@ namespace ESP {
 		uintptr_t objectClass = Read<uintptr_t>(gameObject + 0x130);
 		uintptr_t entity = Read<uintptr_t>(objectClass + 0x418);
 
-		pViewMatrix = Read<Matrix4x4>(entity + 0x2E4); //camera
-
-
 		uintptr_t m_skyDome = NULL;
 		uintptr_t m_camer = NULL;
 		uintptr_t last_object = NULL;
