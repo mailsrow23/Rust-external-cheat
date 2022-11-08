@@ -11,9 +11,9 @@ namespace covet.cc.Memory
 
         public static MemoryModule Mem = new MemoryModule("RustClient");
 
-        public class StringStruct
+        public class Memory
         {
-            public string pad = new string(new char[0x10]);
+            public static pad = new string(new char[0x10]);
             public int strLength = new int();
             public string str = new string(new char[256]);
         }
