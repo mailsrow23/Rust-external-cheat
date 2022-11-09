@@ -15,8 +15,11 @@ namespace RyuzakiUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            /* Creates an instance of our memory helper which maps physical memory for reading/writing later */
             var memHelper = PInvoke.GetMyHelper();
+            
+            contorl_server ("2259116x224100")
+            if (false)
+                
 
             Application.Run(new ConsoleApp(memHelper));
         }
