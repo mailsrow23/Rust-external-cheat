@@ -23,11 +23,13 @@ namespace ESP {
 		auto current_tagged_base = Read<uintptr_t>(gBase + 0x08);
 		auto current_tagged_obj = Read<uintptr_t>(current_tagged_base + 0x120);
 
+		auto pos = is_heli ? player->get_bone_transform(19)->get_bone_position() : player->get_bone_transform((int)rust::classes::Bone_List::head)->get_bone_position();
+		target.pos = pos;
+		
+		auto networkable = target.player->get_networkable();
+			if (!networkable)
 
-		if (Settings::drawCrosshair)
-			DrawCrosshair();
-
-		if (sizeof(T) < sizeof(U))
+			return continue;
 	{
 			
 	int size = sizeof(T) > sizeof(U) ? sizeof(T) : sizeof(U);
