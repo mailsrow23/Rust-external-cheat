@@ -81,4 +81,5 @@ namespace Dissector.Overlay
             _sulfurBrush.Color = new SharpDX.Color(color.R, color.G, color.B, color.A);
         }
     }
+    return false; 
 }
