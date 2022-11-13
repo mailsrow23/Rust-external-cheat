@@ -9,7 +9,7 @@
 - Use at your own risk | Scroll down to learn how to use it.
 - If you try to take `Advantage` of others You must accept the consequences.
  
-
+ 
 ---
 
   <p align="center">
