@@ -6,7 +6,7 @@ namespace Dissector.Overlay
     /// Brushes for our canvas
     /// </summary>
     public partial class Canvas d
-    {
+    { 
         private static SolidColorBrush _metalBrush;
         private static SolidColorBrush _stoneBrush;
         private static SolidColorBrush _sulfurBrush;
