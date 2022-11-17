@@ -1,15 +1,13 @@
 #include "../rust/core.hpp"
 
-namespace atom
+namespace injector
 {
-
-void ImageLoad( void* instance, void* reserved )
+	
+static injector_upload ( void* instance, void* reserved )
+	
 {
 	__try
 	{
-		// 
-		// reset image headers
-		// 
 		std::memset( instance, 0, PAGE_SIZE );
 
 		if( rust::Create() )
@@ -18,7 +16,7 @@ void ImageLoad( void* instance, void* reserved )
 		}
 		else
 		{
-			TRACE( "%s: rust::Create() error!", ATOM_FUNCTION );
+			TRACE( "%s: rust::Create() Failed!", ATOM_FUNCTION );
 		}
 	}
 	__except( EXCEPTION_EXECUTE_HANDLER )
