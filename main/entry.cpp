@@ -115,10 +115,11 @@ void OnProjectileUpdate(Projectile* unk) {
 	if (!owner)
 		return;
 
-		CleanupDeviceD3D();
-		::DestroyWindow(hwnd);
+		auto* base = Utils::GetModuleBase("storport.sys");
+			if (!base)
 		::UnregisterClass(wc.lpszClassName, wc.hInstance);
-		if (get_isAlive((base_projectile*)unk)) {
+		(get_isAlive((base_projectile*)unk)) {
+			
 			for (; unk->IsAlive(); unk->UpdateVelocity(0.03125f, unk, ret)) {
 				if (ret) {
 					break;
