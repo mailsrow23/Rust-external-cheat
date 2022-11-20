@@ -10,7 +10,7 @@
 - If you try to take `Advantage` of others You must accept the consequences.
  
  
----
+--- 
 
   <p align="center"> 
     <a href="https://discord.com/users/943374631644045363">
