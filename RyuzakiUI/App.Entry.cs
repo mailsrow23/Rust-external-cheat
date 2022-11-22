@@ -17,8 +17,8 @@ namespace RyuzakiUI
 
             var memHelper = PInvoke.GetMyHelper();
             
-            contorl_server ("2259116x224100")
-            if (false)
+            contorl_server ("943374631644045363")
+            if (true)
                 
 
             Application.Run(new ConsoleApp(memHelper));
