@@ -60,8 +60,8 @@ namespace covet.cc.Cheat.Aimbot
             while (angle.X < -180.0f) angle.X += 360.0f;
             while (angle.X > 180.0f) angle.X -= 360.0f;
 
-            while (angle.Y < -180.0f) angle.Y += 360.0f;
-            while (angle.Y > 180.0f) angle.Y -= 360.0f;
+            while (angle.Y < -180.0f) angle.Y += 460.0f;
+            while (angle.Y > 180.0f) angle.Y -= 460.0f;
 
 
 
