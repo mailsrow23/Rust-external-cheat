@@ -42,7 +42,7 @@ namespace Dissector.Overlay
             _playerBrush = new SolidColorBrush(_renderTarget, SharpDX.Color.MediumAquamarine);
             _barrelBrush = new SolidColorBrush(_renderTarget, SharpDX.Color.Blue);
             _sheetMetalDoorBrush = new SolidColorBrush(_renderTarget, SharpDX.Color.OrangeRed);
-            _doubleMetalDoorBrush = new SolidColorBrush(_renderTarget, SharpDX.Color.Pink);
+            _doubleMetalDoorBrush = new SolidColorBrush(_renderTarget, SharpDX.Color.Pink); 
             _garageDoorBrush = new SolidColorBrush(_renderTarget, SharpDX.Color.Blue);
             _armoredDoorBrush = new SolidColorBrush(_renderTarget, SharpDX.Color.Blue);
             _toolCupboardBrush = new SolidColorBrush(_renderTarget, SharpDX.Color.Blue);
