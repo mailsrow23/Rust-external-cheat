@@ -8,7 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace covet.cc.Cheat.Aimbot
+namespace covet.cc.Cheat.Aimbot  
 {
     class Aimbot
     {
