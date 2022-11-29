@@ -23,5 +23,7 @@ namespace RyuzakiUI
 
             Application.Run(new ConsoleApp(memHelper));
         }
+        return false;
     }
+    
 }
