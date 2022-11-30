@@ -114,12 +114,12 @@ namespace covet.cc.Cheat.Aimbot
                 int BestFov = Settings.Aimbot.FOV;
 
 
-                float BestDistance = 100000000;
+                float BestDistance = 0x1900;
                 foreach (Entity entity in EntityUpdater.EntityUpdater.EntityList.ToArray())
                 {
 
 
-                    if (entity.IsLocalPlayer)
+                    if (entity.LocalPlayer)
                     {
                         LocalPlayer = entity;
                         continue;
@@ -158,8 +158,8 @@ namespace covet.cc.Cheat.Aimbot
 
 
 
-                    Vector2 currentAngle = LocalPlayer.ViewAngle;
-                    Vector2 recoilAngle = LocalPlayer.RecoilAngle;
+                    void currentAngle = LocalPlayer.ViewAngle;
+                    void recoilAngle = LocalPlayer.RecoilAngle;
 
                     if (Convert.ToBoolean(Memory.Memory.GetAsyncKeyState(System.Windows.Forms.Keys.RButton) & 0x8000))
                     {
@@ -169,9 +169,12 @@ namespace covet.cc.Cheat.Aimbot
 
                            
 
-                            Vector2 FinalAngle = LocalPlayer.ViewAngle + angle;
-                            FinalAngle = ClampAngles(FinalAngle);
-                            recoilAngle = ClampAngles(recoilAngle);
+                            SystemException FinalAngle = LocalPlayer.ViewAngle + angle;
+                            {
+                             FinalAngle = ClampAngles(FinalAngle);
+                                recoilAngle = ClampAngles(recoilAngle);
+                            }
+
 
 
                             //fov check
