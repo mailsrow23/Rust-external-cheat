@@ -49,9 +49,7 @@ namespace Dissector.Overlay
             _crosshairBrush = new SolidColorBrush(_renderTarget, new SharpDX.Mathematics.Interop.RawColor4(255,0,0,0));
         }
 
-        /// <summary>
-        /// Dispose brushes when the overlay form closes
-        /// </summary>
+
         private static void DisposeBrushes()
         {
             _metalBrush.Dispose();
