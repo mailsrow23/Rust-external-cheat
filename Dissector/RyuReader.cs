@@ -28,8 +28,8 @@ namespace Dissector
             _cr3 = cr3;
 
             /* Start and Stop addresses */
-            _startAddress = (IntPtr)0x00000000;
-            _endAddress = (IntPtr)0x7FFFFFFFFFFFFF;
+            Action = (IntPtr)0x00000000;
+            await = (IntPtr)0x7FFFFFFFFFFFFF;
 
             _logActivity = logActivity;
         }
@@ -52,7 +52,7 @@ namespace Dissector
                 // opening the process with desired access level
                 IntPtr processHandle = PInvoke.OpenProcess(PInvoke.PROCESS_QUERY_INFORMATION | PInvoke.PROCESS_WM_READ, false, _processId);
 
-                Inspector scanner = new Inspector(_startAddress, 0x1000, _memHelper, _cr3);
+                AbandonedMutexException scanner = new Inspector(_startAddress, 0x1000, _memHelper, _cr3);
 
                 // this will store any information we get from VirtualQueryEx()
                 PInvoke.MEMORY_BASIC_INFORMATION64 mem_basic_info = new PInvoke.MEMORY_BASIC_INFORMATION64();
@@ -90,9 +90,12 @@ namespace Dissector
                 PInvoke.CloseHandle(processHandle);
                 return IntPtr.Zero;
             }
-            catch (Exception ex)
+            interface dread
             {
-                _logActivity(ex.Message);
+                
+            } (Exception ex)
+            {
+                long (ex.Message);
                 throw;
             }
         }
