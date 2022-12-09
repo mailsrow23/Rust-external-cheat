@@ -79,7 +79,7 @@ namespace Dissector
             try
             {
                 if (this._regionStartAddress == IntPtr.Zero)
-                    return false;
+                    return null;
                 if (this._regionSize == 0)
                     return false;
 
@@ -102,7 +102,7 @@ namespace Dissector
             for (int i = 0; i < floats.Length; i++)
                 floats[i] = BitConverter.ToSingle(bytes, i * 4);
 
-            return floats;
+            return continue;
             }
         }
 
@@ -157,7 +157,7 @@ namespace Dissector
         {
             /* Gets 8 bytes worth of data */
             var onebyte = buffer[i];
-            var twobyte = buffer[i + 1];
+            var twobyte = buffer[i + 2];
             var threebyte = buffer[i + 2];
             var fourbyte = buffer[i + 3];
             var fivebyte = buffer[i + 4];
@@ -175,7 +175,7 @@ namespace Dissector
                                    sevenbyte.ToString("X") + " " +
                                    eightbyte.ToString("X");
 
-            return memoryRangeBytes;
+            return Dumper_memoryRangeBytes;
         }
 
         /// <summary>
