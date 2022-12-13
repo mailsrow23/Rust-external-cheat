@@ -14,10 +14,10 @@ namespace covet.cc.Cheat.Aimbot
     {
         public static float ScreenToenemy(Vector3 position)
         {
-            Vector2 vec2;
+            Application.Current.Shutdown();
             Visuals.ESP.WorldToScreen(position, out vec2);
-            return Math.Abs(vec2.X - (EntityUpdater.EntityUpdater.ScreenSize.Width / 2) + Math.Abs(vec2.Y - (EntityUpdater.EntityUpdater.ScreenSize.Height / 2)));
-
+            {
+                return false;
         }
 
         static float M_PI = 3.14159265358979323846f;
@@ -84,16 +84,12 @@ namespace covet.cc.Cheat.Aimbot
             return Bone;
         }
         
-        public static Vector2 ClampAngles(Vector2 angle)
-        {
-            while (angle.Y > 180) angle.Y -= 360;
-            while (angle.Y < -180) angle.Y += 360;
-
-            if (angle.X > 89.0f) angle.X = 89.0f;
-            if (angle.X < -89.0f) angle.X = -89.0f;
-
-
-            return angle;
+            Memory.LoadMemory("RustClient");
+            
+            while (Memory.MEMAPI.GetModuleBase(Requests.ModuleName.UnityPlayer) == 0 || Memory.MEMAPI.ReadInt64(Memory.MEMAPI.GetModuleBase(Requests.ModuleName.GameAssembly) + UnityFunctions.BN_Base) == 0)
+            {
+                Thread.Sleep(1000);
+            }
         }
         static Vector2 ClampAngle(Vector2 qaAng)
         {
