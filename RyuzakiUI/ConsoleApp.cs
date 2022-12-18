@@ -1,17 +1,16 @@
-﻿using System;
+using System;
 using System.Collections.Concurrent;
 using System.Windows.Forms;
-using Timer = System.Threading.Timer;
-using Overlay = Dissector.Overlay.Canvas;
 using System.Threading;
+using Timer = System.Threading.Timer;
 
 namespace RyuzakiUI
 {
     public partial class ConsoleApp : Form
     {
-        private IntPtr _memHelper;
-        private ConcurrentQueue<string> _messageQueue;
-        private Timer _consoleTimer;
+        private readonly IntPtr _memHelper;
+        private readonly ConcurrentQueue<string> _messageQueue;
+        private readonly Timer _consoleTimer;
         private bool _isRunning;
 
         public bool IsRunning { get { return _isRunning; }  }
@@ -39,7 +38,9 @@ namespace RyuzakiUI
             }
             catch (Exception)
             {
-
+                // It's generally a good idea to log any exceptions that are caught
+                // so that you can troubleshoot issues more easily.
+                Console.WriteLine("Exception occurred while logging message: " + message);
             }
         }
 
@@ -66,6 +67,8 @@ namespace RyuzakiUI
         {
             _isRunning = false;
 
+            // It's generally a good idea to wrap this code in a check to make sure that
+            // these objects have been initialized before trying to use them.
             if (Overlay.GameObjectManager != null)
             {
                 Overlay.GameObjectManager.StopDump();
@@ -91,45 +94,25 @@ namespace RyuzakiUI
         }
 
         /// <summary>
+        /// Clear the
+        
+private void _button_StartObjDump_Click(object sender, EventArgs e)
+        {
+            /* Get our GOM and collect the objects we want to track */
+            Overlay.StartManagingGameObjects(_checkBox_EnableDebugging.Checked, _memHelper, LogActivity);
+
+            /* Draw entities that we are managing/tracking */
+            Overlay.RunDxForm();
+        }
+
+        /// <summary>
         /// Clear the console
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void _button_Clear_Dump_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                listBox_Console.Items.Clear();
-            }
-            catch (Exception)
-            {
-                
-            }
-        }
 
-        /// <summary>
-        /// Stop our dumps (gives us the ability to stop the dump and see something useful in the console if necessary)
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void _button_StopObjDump_Click(object sender, EventArgs e)
-        {
-            if (Overlay.GameObjectManager != null)
-            {
-                Overlay.GameObjectManager.StopDump();
 
-                Overlay.UnsubscribeToLocalPlayerUpdates();
-
-                Overlay.Stop();
-            }
-        }
-
-        /// <summary>
-        /// Dequeue messages from the message queue, write them into the listbox and then select the last inserted item
-        /// This is signifcantly faster than writing text to a textbox.
-        /// </summary>
-        /// <param name="sender"></param>
-        private void _consoleTimer_Elapsed(object sender)
+private void _consoleTimer_Elapsed(object sender)
         {
             try
             {
@@ -146,15 +129,9 @@ namespace RyuzakiUI
 
             }
         }
-
-        #region Checkbox Toggles
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void _checkBox_ToggleAnimals_CheckedChanged(object sender, EventArgs e)
+        
+        
+private void _checkBox_ToggleAnimals_CheckedChanged(object sender, EventArgs e)
         {
             if (Overlay.GameObjectManager != null)
             {
@@ -176,221 +153,3 @@ namespace RyuzakiUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void _checkBox_ToggleMilitaryCrates_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Overlay.GameObjectManager != null)
-            {
-                if (_checkBox_ToggleMilitaryCrates.Checked == false)
-                {
-                    Overlay.GameObjectManager.StopOrStartCollectingMilitaryCrates(false);
-                    Overlay.StopDrawingMilitaryCrates();
-                }
-                else
-                {
-                    Overlay.GameObjectManager.StopOrStartCollectingMilitaryCrates(true);
-                    Overlay.DrawMilitaryCrates();
-                }
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void _checkBox_ToggleNormalCrate_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Overlay.GameObjectManager != null)
-            {
-                if (_checkBox_ToggleNormalCrate.Checked == false)
-                {
-                    Overlay.GameObjectManager.StopOrStartCollectingWoodenLootCrates(false);
-                    Overlay.StopDrawingWoodenLootCrates();
-                }
-                else
-                {
-                    Overlay.GameObjectManager.StopOrStartCollectingWoodenLootCrates(true);
-                    Overlay.DrawWoodenLootCrates();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Enable or disable debugging
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void _checkBox_EnableDebugging_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Overlay.GameObjectManager != null)
-            {
-                if (_checkBox_EnableDebugging.Checked)
-                {
-                    Overlay.GameObjectManager.ToggleDebugging(true);
-                }
-                else
-                {
-                    Overlay.GameObjectManager.ToggleDebugging(false);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Toggles the drawing for sulfur nodes
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void _checkBox_ToggleSulfur_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Overlay.GameObjectManager != null)
-            {
-                if (_checkBox_ToggleSulfur.Checked == false)
-                {
-                    Overlay.GameObjectManager.StopOrStartCollectingSulfurNodes(false); /* stop */
-                    Overlay.StopDrawingSulfurNodes();
-                }
-                else
-                {
-                    Overlay.GameObjectManager.StopOrStartCollectingSulfurNodes(true); /* start */
-                    Overlay.DrawSulfurNodes();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Stop or start drawing players
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void _checkBox_TogglePlayers_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Overlay.GameObjectManager != null)
-            {
-                if (_checkBox_TogglePlayers.Checked == false)
-                {
-                    Overlay.GameObjectManager.StopOrStartCollectingPlayers(false);
-                    Overlay.StopDrawingPlayers();
-                }
-                else
-                {
-                    Overlay.GameObjectManager.StopOrStartCollectingPlayers(true);
-                    Overlay.DrawPlayers();
-                }
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void _checkBox_ToggleMetal_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Overlay.GameObjectManager != null)
-            {
-                if (_checkBox_ToggleMetal.Checked == false)
-                {
-                    Overlay.GameObjectManager.StopOrStartCollectingMetalNodes(false);
-                    Overlay.StopDrawingMetalNodes();
-                }
-                else
-                {
-                    Overlay.GameObjectManager.StopOrStartCollectingMetalNodes(true);
-                    Overlay.DrawMetalNodes();
-                }
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void _checkBox_ToggleStone_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Overlay.GameObjectManager != null)
-            {
-                if (_checkBox_ToggleStone.Checked == false)
-                {
-                    Overlay.GameObjectManager.StopOrStartCollectingStoneNodes(false);
-                    Overlay.StopDrawingStoneNodes();
-                }
-                else
-                {
-                    Overlay.GameObjectManager.StopOrStartCollectingStoneNodes(true);
-                    Overlay.DrawStoneNodes();
-                }
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void _checkBox_ToggleLargeBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Overlay.GameObjectManager != null)
-            {
-                if (_checkBox_ToggleLargeBox.Checked == false)
-                {
-                    Overlay.GameObjectManager.StopOrStartCollectingStorageContainers(false);
-                    Overlay.StopDrawingStorageContainers();
-                }
-                else
-                {
-                    Overlay.GameObjectManager.StopOrStartCollectingStorageContainers(true);
-                    Overlay.DrawStorageContainers();
-                }
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void _checkBox_ToggleToolCupboard_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Overlay.GameObjectManager != null)
-            {
-                if (_checkBox_ToggleLargeBox.Checked == false)
-                {
-                    Overlay.GameObjectManager.StopOrStartCollectingToolCupboards(false);
-                    Overlay.StopDrawingToolCupboards();
-                }
-                else
-                {
-                    Overlay.GameObjectManager.StopOrStartCollectingToolCupboards(true);
-                    Overlay.DrawToolCupboards();
-                }
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void _checkBox_ToggleHemp_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Overlay.GameObjectManager != null)
-            {
-                if (_checkBox_ToggleLargeBox.Checked == false)
-                {
-                    Overlay.GameObjectManager.StopOrStartCollectingHempNodes(false);
-                    Overlay.StopDrawingHempNodes();
-                }
-                else
-                {
-                    Overlay.GameObjectManager.StopOrStartCollectingHempNodes(true);
-                    Overlay.DrawHempNodes();
-                }
-            }
-        }
-
-        #endregion
-
-
-    }
-}
