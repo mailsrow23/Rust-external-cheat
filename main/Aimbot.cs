@@ -1,214 +1,153 @@
-using covet.cc.Rust.Structs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace covet.cc.Cheat.Aimbot  
+class Aimbot
 {
-    class Aimbot
+    // Constants
+    private const float M_PI = 3.14159265358979323846f;
+
+    // Variables
+    private List<Entity> nearestPlayers = new List<Entity>();
+    private Entity localPlayer;
+    private Entity nearestPlayer;
+
+    // Methods
+    private static double RAD2DEG(double x)
     {
-        public static float ScreenToenemy(Vector3 position)
+        return x / Math.PI * 180.0;
+    }
+
+    private static float GetLength(Vector3 a)
+    {
+        return (float)Math.Sqrt(a.X * a.X + a.Y * a.Y + a.Z * a.Z);
+    }
+
+    private static float ToRadian(float degree)
+    {
+        return degree * M_PI / 180f;
+    }
+
+    private static float ToDegree(float radian)
+    {
+        return radian * 180f / M_PI;
+    }
+
+    private static Vector2 CalcAngle(Vector3 localPos, Vector3 enemyPos)
+    {
+        Vector3 dir = new Vector3(localPos.X - enemyPos.X, localPos.Y - enemyPos.Y, localPos.Z - enemyPos.Z);
+        float pitch = ToDegree((float)Math.Asin(dir.Y / GetLength(dir)));
+        float yaw = ToDegree((float)-Math.Atan2(dir.X, -dir.Z));
+        return new Vector2(pitch, yaw);
+    }
+
+    private static Vector2 Normalize(Vector2 angle)
+    {
+        while (angle.X < -180f)
         {
-            Application.Current.Shutdown();
-            Visuals.ESP.WorldToScreen(position, out vec2);
+            angle.X += 360f;
+        }
+
+        while (angle.X > 180f)
+        {
+            angle.X -= 360f;
+        }
+
+        while (angle.Y < -180f)
+        {
+            angle.Y += 360f;
+        }
+
+        while (angle.Y > 180f)
+        {
+            angle.Y -= 360f;
+        }
+
+        return angle;
+    }
+
+    private static Vector3 Prediction(Entity enemy)
+    {
+        Vector3 vel = enemy.Velocity;
+        Vector3 bone = enemy.Position;
+        float distance = Vector3.Distance(localPlayer.Position, enemy.Position);
+
+        if (distance > 0.001f)
+        {
+            float bulletTime = distance / 50f; // Replace .50f with bullet speed
+            Vector3 predict = vel * bulletTime * 0.75f;
+            bone += predict;
+            bone.Y += 4.905f * bulletTime * bulletTime;
+        }
+
+        return bone;
+    }
+
+    public static bool ScreenToEnemy(Vector3 position)
+    {
+        Visuals.ESP.WorldToScreen(position, out vec2);
+        return vec2.X > 0 && vec2.Y > 0 && vec2.X < Screen.PrimaryScreen.Bounds.Width && vec2.Y < Screen.PrimaryScreen.Bounds.Height;
+    }
+    
+    
+ public static void Run()
+{
+    while (true)
+    {
+        // Find the nearest enemy within the specified FOV and distance
+        int bestFov = Settings.Aimbot.FOV;
+        float bestDistance = 0x1900;
+        Entity nearestPlayer = null;
+        foreach (Entity entity in EntityUpdater.EntityUpdater.EntityList)
+        {
+            if (entity.LocalPlayer)
             {
-                return false;
-        }
-
-        static float M_PI = 3.14159265358979323846f;
-
-        static List<Entity> NearestPlayers = new List<Entity>();
-        static Entity LocalPlayer;
-        static Entity NearestPlayer;
-
-        static double RAD2DEG(double x)
-        {
-            return (x / Math.PI * 180.0);
-        }
-       static float GetLength(Vector3 a)
-        {
-            return (float)Math.Sqrt(a.X * a.X + a.Y * a.Y + a.Z * a.Z);
-        }
-
-        static float to_radian(float degree)
-        {
-            return degree * 3.141592f / .180f;
-        }
-
-        static float to_degree(float radian)
-        {
-            return radian * .180f / 3.141592f;
-        }
-
-
-        static private Vector2 CalcAngle(Vector3 LocalPos, Vector3 EnemyPos)
-        {
-            Vector3 dir = new Vector3(LocalPos.X - EnemyPos.X, LocalPos.Y - EnemyPos.Y, LocalPos.Z - EnemyPos.Z);
-
-            float Pitch = to_degree((float)Math.Asin(dir.Y / GetLength(dir)));
-            float Yaw = to_degree((float)-Math.Atan2(dir.X, -dir.Z));
-
-            return new Vector2( (float)RAD2DEG(Math.Asin(dir.Y / GetLength(dir))), (float)RAD2DEG(-Math.Atan2(dir.X, -dir.Z)) );
-        }
-        public static Vector2 Normalize(Vector2 angle)
-        {
-            while (angle.X < -180.0f) angle.X += 360.0f;
-            while (angle.X > 180.0f) angle.X -= 360.0f;
-
-            while (angle.Y < -180.0f) angle.Y += 460.0f;
-            while (angle.Y > 180.0f) angle.Y -= 460.0f;
-
-
-
-            return angle;
-        }
-        public static Vector3 Predication()
-        {
-            Vector3 vel = NearestPlayer.Velocity;
-            Vector3 Bone = NearestPlayer.Position;
-
-            float Distance = Vector3.Distance(LocalPlayer.Position, NearestPlayer.Position);
-
-            if(Distance > 0.001f)
-            {
-                float BulletTime = Distance / 50.0f ; //replace .50f with da bullet speed
-                Vector3 predict = vel * BulletTime * 0.75f;
-                Bone += predict;
-                Bone.Y += (4.905f * BulletTime * BulletTime);
+                LocalPlayer = entity;
+                continue;
             }
-            return Bone;
-        }
-        
-            Memory.LoadMemory("RustClient");
-            
-            while (Memory.MEMAPI.GetModuleBase(Requests.ModuleName.UnityPlayer) == 0 || Memory.MEMAPI.ReadInt64(Memory.MEMAPI.GetModuleBase(Requests.ModuleName.GameAssembly) + UnityFunctions.BN_Base) == 0)
+
+            float distance = Vector3.Distance(LocalPlayer.Position, entity.Position);
+            if (distance > 300 || entity.Health < 0.1)
             {
-                Thread.Sleep(1000);
+                continue;
+            }
+
+            float fov = ScreenToEnemy(entity.Position);
+            if (fov < bestFov)
+            {
+                bestFov = (int)fov;
+                nearestPlayer = entity;
             }
         }
-        static Vector2 ClampAngle(Vector2 qaAng)
+
+        // Aim at the nearest enemy if it was found
+        if (LocalPlayer != null && nearestPlayer != null)
         {
-            if (qaAng.X > 89.0f)
-                qaAng.X = 89.0f;
-            if (qaAng.X < -89.0f)
-                qaAng.X = -89.0f;
-            while (qaAng.Y > 180.0f)
-                qaAng.Y -= 360.0f;
-            while (qaAng.Y < -180.0f)
-                qaAng.Y += 360.0f;
-            return qaAng;
-        }
-        public static void Run()
-        {
-            for (; ; )
+            Vector3 aimPos = nearestPlayer.Position;
+            Vector2 currentAngle = LocalPlayer.ViewAngle;
+            Vector2 recoilAngle = LocalPlayer.RecoilAngle;
+
+            // Check if the right mouse button is pressed
+            if (Convert.ToBoolean(Memory.Memory.GetAsyncKeyState(System.Windows.Forms.Keys.RButton) & 0x8000))
             {
-                int BestFov = Settings.Aimbot.FOV;
+                Vector2 angle = CalcAngle(LocalPlayer.Position, aimPos) - LocalPlayer.ViewAngle;
+                Vector2 finalAngle = LocalPlayer.ViewAngle + angle;
+                finalAngle = ClampAngles(finalAngle);
+                recoilAngle = ClampAngles(recoilAngle);
 
+                // Apply RCS
+                finalAngle.X -= recoilAngle.X;
+                finalAngle.Y -= recoilAngle.Y;
 
-                float BestDistance = 0x1900;
-                foreach (Entity entity in EntityUpdater.EntityUpdater.EntityList.ToArray())
-                {
+                Vector2 delta = ClampAngle(finalAngle - currentAngle);
+                delta = ClampAngles(delta);
+                finalAngle.X = currentAngle.X += delta.X / Settings.Aimbot.Smoothness;
+                finalAngle.Y = currentAngle.Y += delta.Y / Settings.Aimbot.Smoothness;
+                finalAngle = ClampAngles(finalAngle);
+                finalAngle = Normalize(finalAngle);
 
-
-                    if (entity.LocalPlayer)
-                    {
-                        LocalPlayer = entity;
-                        continue;
-
-                    }
-
-
-
-
-                    float Distance = Vector3.Distance(LocalPlayer.Position, entity.Position);
-
-                    if (entity.Health < 0.1)
-                        continue;
-
-                    if (Distance > 300)
-                        continue;
-
-
-                    float fov = ScreenToenemy(entity.Position);
-                    if (fov < BestFov)
-                    {
-                        BestFov = (int)fov;
-                        NearestPlayer = entity;
-                    }
-
-                }
-
-                if (LocalPlayer != null && NearestPlayer != null)
-                {
-
-
-                    Vector3 aimPos;
-                    aimPos = NearestPlayer.Position;
-
-
-
-
-
-                    void currentAngle = LocalPlayer.ViewAngle;
-                    void recoilAngle = LocalPlayer.RecoilAngle;
-
-                    if (Convert.ToBoolean(Memory.Memory.GetAsyncKeyState(System.Windows.Forms.Keys.RButton) & 0x8000))
-                    {
-                        
-                            Vector2 angle = CalcAngle(LocalPlayer.Position, aimPos) - LocalPlayer.ViewAngle;
-
-
-                           
-
-                            SystemException FinalAngle = LocalPlayer.ViewAngle + angle;
-                            {
-                             FinalAngle = ClampAngles(FinalAngle);
-                                recoilAngle = ClampAngles(recoilAngle);
-                            }
-
-
-
-                            //fov check
-                         
-
-
-                            //rcs
-                            FinalAngle.X -= recoilAngle.X;
-                            FinalAngle.Y -= recoilAngle.Y;
-
-                        Vector2 delta = ClampAngle(FinalAngle - currentAngle);
-                        ClampAngles(delta);
-                        FinalAngle.X = currentAngle.X += delta.X / Settings.Aimbot.Smoothness;
-                        FinalAngle.Y = currentAngle.Y += delta.Y / Settings.Aimbot.Smoothness;
-                        FinalAngle = ClampAngles(FinalAngle);
-
-
-                        //set view angles
-                        FinalAngle = Normalize(FinalAngle);
-                            LocalPlayer.ViewAngle = FinalAngle;
-                            
-
-
-
-
-                    
-
-
-
-                    }
-                }
-            
-                    
-        
-
-                Thread.Sleep(5);
+                // Set the view angles
+                LocalPlayer.ViewAngle = finalAngle;
             }
-         
         }
+
+        // Sleep for a short time to prevent CPU overload
+        Thread.Sleep(5);
     }
 }
