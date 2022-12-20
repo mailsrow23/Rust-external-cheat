@@ -57,7 +57,7 @@ namespace Dissector
         /// The next object address (this objects address + 0x08)
         /// We use this in our loop to compare the last tagged object address to this address 
         /// </summary>        
-        public long NextObjectAddress
+        public long InitialAddress { get; set; }
         {
             get { return _nextObjectAddress; }
             set { _nextObjectAddress = value; }
@@ -103,114 +103,94 @@ namespace Dissector
         /// <summary>
         /// This is used as the key for player dictionary
         /// </summary>
-        public unsafe long SteamID
-        {
-            get
-            {
-                if (_isNetworkableObject)
-                {
-                    if (_steamId == 0)
-                    {
-                        _steamId = KeeperOf.Memory.ReadMultiLevelLong(_objectAddressPtr, OffsetStructs.EntitySteamID.FromBaseNetworkablePath);
-                        return _steamId;
-                    }
-                    else
-                    {
-                        return _steamId;
-                    }
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-            set { _steamId = value; }
-        }
+public class Object
+{
+    private readonly bool _isNetworkableObject;
+    private readonly IntPtr _objectAddressPtr;
+    private readonly IntPtr _nextObjectAddressPtr;
+    private readonly bool _useNextAddress;
 
-        /// <summary>
-        /// Gets the Rotation from the Main Camera viewmatrix
-        /// </summary>
-        public unsafe SharpDX.Matrix Rotation
+    private long _steamId;
+    private SharpDX.Matrix _rotationMatrix;
+    private IntPtr _networkablePtr;
+
+    public Object(bool isNetworkableObject, IntPtr objectAddressPtr, IntPtr nextObjectAddressPtr, bool useNextAddress)
+    {
+        _isNetworkableObject = isNetworkableObject;
+        _objectAddressPtr = objectAddressPtr;
+        _nextObjectAddressPtr = nextObjectAddressPtr;
+        _useNextAddress = useNextAddress;
+    }
+
+    public long SteamID
+    {
+        get
         {
-            get
+            if (_isNetworkableObject)
             {
-                if (_useNextAddress)
+                if (_steamId == 0)
                 {
-                    return KeeperOf.Memory.ReadMultiLevelManaged<Matrix>(_nextObjectAddressPtr, OffsetStructs.RotationOffsetPath.FromNextObjectLink);
+                    _steamId = KeeperOf.Memory.ReadMultiLevelLong(_objectAddressPtr, OffsetStructs.EntitySteamID.FromBaseNetworkablePath);
                 }
-                else
-                {
-                    return KeeperOf.Memory.ReadMultiLevelManaged<Matrix>(_objectAddressPtr, OffsetStructs.RotationOffsetPath.FromInitialObject);
-                }
+
+                return _steamId;
             }
 
-            private set { _rotationMatrix = value; }
+            return 0;
         }
+    }
 
-        /// <summary>
-        /// Reads the layer integer value for this object (basically a category that this object would fall into.)
-        /// </summary>
-        public unsafe int Networkable
+    public SharpDX.Matrix Rotation
+    {
+        get
         {
-            get
+            if (_useNextAddress)
             {
-                if (_isNetworkableObject)
-                {
-                    return KeeperOf.Memory.ReadMultiLevelInt32(_objectAddressPtr, OffsetStructs.NetworkableOffsetPath.FromBaseNetworkablePath);
-                }
-                if (_useNextAddress)
-                {
-                    return KeeperOf.Memory.ReadMultiLevelInt32(_nextObjectAddressPtr, OffsetStructs.NetworkableOffsetPath.FromNextObjectLink);
-                }
-                else
-                {
-                    return KeeperOf.Memory.ReadMultiLevelInt32(_objectAddressPtr, OffsetStructs.NetworkableOffsetPath.FromInitialObject);
-                }
+                _rotationMatrix = KeeperOf.Memory.ReadMultiLevelManaged<Matrix>(_nextObjectAddressPtr, OffsetStructs.RotationOffsetPath.FromNextObjectLink);
+            }
+            else
+            {
+                _rotationMatrix = KeeperOf.Memory.ReadMultiLevelManaged<Matrix>(_objectAddressPtr, OffsetStructs.RotationOffsetPath.FromInitialObject);
             }
 
-            private set { _networkablePtr = IntPtr.Zero; }
+            return _rotationMatrix;
         }
+    }
 
-        /// <summary>
-        /// Reads a players active item uid
-        /// we use this to compare it to the itemuid on a players belt to get the name of their active item
-        /// </summary>
-        public unsafe int ActiveItemUID
+    public int Networkable
+    {
+        get
         {
-            get
+            if (_isNetworkableObject)
             {
-                if (_isNetworkableObject)
-                {
-                    return KeeperOf.Memory.ReadMultiLevelInt32(_objectAddressPtr, OffsetStructs.ActiveItem.FromBaseNetworkablePath);
-                }
+                return KeeperOf.Memory.ReadMultiLevelInt32(_objectAddressPtr, OffsetStructs.NetworkableOffsetPath.FromBaseNetworkablePath);
+            }
 
-                return 0;
-            }
-            private set { }
-        }
-        public unsafe long SteamID
-        {
-            get
+            if (_useNextAddress)
             {
-                if (_isNetworkableObject)
-                {
-                    if (_steamId == 0)
-                    {
-                        _steamId = KeeperOf.Memory.ReadMultiLevelLong(_objectAddressPtr, OffsetStructs.EntitySteamID.FromBaseNetworkablePath);
-                        return _steamId;
-                    }
-                    else
-                    {
-                        return _steamId;
-                    }
-                }
-                else
-                {
-                    return 0;
-                }
+                return KeeperOf.Memory.ReadMultiLevelInt32(_nextObjectAddressPtr, OffsetStructs.NetworkableOffsetPath.FromNextObjectLink);
             }
-            set { _steamId = value; }
+            else
+            {
+                return KeeperOf.Memory.ReadMultiLevelInt32(_objectAddressPtr, OffsetStructs.NetworkableOffsetPath.FromInitialObject);
+            }
         }
+    }
+
+    public int ActiveItemUID
+    {
+        get
+        {
+            if (_isNetworkableObject)
+            {
+                return KeeperOf.Memory.ReadMultiLevelInt32(_objectAddressPtr, OffsetStructs.ActiveItem.FromBaseNetworkablePath);
+            }
+
+            return 0;
+        }
+    }
+}
+
 
         /// <summary>
         /// 
