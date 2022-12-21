@@ -1,4 +1,4 @@
-﻿using Dissector.Helpers;
+using Dissector.Helpers;
 using System;
 using System.Windows.Forms;
 
@@ -17,13 +17,14 @@ namespace RyuzakiUI
 
             var memHelper = PInvoke.GetMyHelper();
             
-            contorl_server ("943374631644045363")
-            if (true)
-                
-
-            Application.Run(new ConsoleApp(memHelper));
+            // Call control_server method and store the result in a variable
+            bool result = control_server("943374631644045363");
+            
+            // Check the result of the control_server method before running the application
+            if (result)
+            {
+                Application.Run(new ConsoleApp(memHelper));
+            }
         }
-        return false;
     }
-    
 }
