@@ -4,11 +4,10 @@ class Aimbot
     private const float M_PI = 3.14159265358979323846f;
 
     // Variables
-    private List<Entity> nearestPlayers = new List<Entity>();
     private Entity localPlayer;
     private Entity nearestPlayer;
 
-    // Methods
+    // Utility methods
     private static double RAD2DEG(double x)
     {
         return x / Math.PI * 180.0;
@@ -85,14 +84,12 @@ class Aimbot
         return vec2.X > 0 && vec2.Y > 0 && vec2.X < Screen.PrimaryScreen.Bounds.Width && vec2.Y < Screen.PrimaryScreen.Bounds.Height;
     }
     
-    
- public static void Run()
-{
-    while (true)
+    // Improved Run method
+    public static void Run()
     {
         // Find the nearest enemy within the specified FOV and distance
-        int bestFov = Settings.Aimbot.FOV;
-        float bestDistance = 0x1900;
+        float bestFov = Settings.Aimbot
+
         Entity nearestPlayer = null;
         foreach (Entity entity in EntityUpdater.EntityUpdater.EntityList)
         {
