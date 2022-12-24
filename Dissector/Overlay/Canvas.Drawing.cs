@@ -13,24 +13,25 @@ namespace Dissector.Overlay
     public partial class Canvas
     {
 
-        private static void DrawActivePlayers()
+private static void DrawActivePlayers()
+{
+    /* Draws active, networkable players using an aquamarine medium color */
+    foreach (var entity in _playerEntities)
+    {
+        /* All we really need is the distance to the player */
+        _renderTarget.DrawEllipse(new Ellipse(new RawVector2(entity.Value.ScreenX, entity.Value.ScreenY), 2, 2), _playerBrush, 2);
+
+        DrawText(String.Format("Distance: {0:n}", entity.Value.Distance), _playerBrush, entity.Value.ScreenX, entity.Value.ScreenY + 15, 12);
+        DrawText(String.Format("Active Item: {0}", entity.Value.PlayerActiveItem), _playerBrush, entity.Value.ScreenX, entity.Value.ScreenY + 30, 12);
+
+        /* I prefer to know which players are scientists.  I could care less about actual player names, that will only get me in trouble */
+        if (entity.Value.PlayerName.StartsWith("Scientist"))
         {
-            /* Draws active, networkable players using an aquamarinemedium color */
-            foreach (var entity in _playerEntities)
-            {
-                /* All we really need is the distance to the player */
-                _renderTarget.DrawEllipse(new Ellipse(new RawVector2(entity.Value.ScreenX, entity.Value.ScreenY), 1, 1), _playerBrush, 1);
-
-                DrawText(String.Format("{0:n}", entity.Value.Distance), _playerBrush, entity.Value.ScreenX, entity.Value.ScreenY + 15);
-                DrawText(entity.Value.PlayerActiveItem, _playerBrush, entity.Value.ScreenX, entity.Value.ScreenY + 25);
-
-                /* I prefer to know which players are scientists.  I could care less about actual player names, that will only get me in trouble */
-                if (entity.Value.PlayerName.StartsWith("Scientist"))
-                {
-                    DrawText(entity.Value.PlayerName, _playerBrush, entity.Value.ScreenX, entity.Value.ScreenY + 35);
-                }
-            }
+            DrawText(String.Format("Name: {0}", entity.Value.PlayerName), _playerBrush, entity.Value.ScreenX, entity.Value.ScreenY + 45, 12);
         }
+    }
+}
+
 
         /// <summary>
         /// Draws players that are sleeping and currently logged out
