@@ -3,33 +3,37 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Diagnostics;
 
-namespace covet.cc.Memory
+namespace Covet.Memory
 {
-    class Memory
+    class MemoryManager
     {
         private static readonly string WindowName = "Rust";
         private static Process process;
         private static SafeHandle processHandle;
         private static IntPtr unityPlayer;
 
-        private static readonly MemoryModule Mem = new MemoryModule("RustClient");
+        private static readonly MemoryModule memoryModule = new MemoryModule("RustClient");
 
         [StructLayout(LayoutKind.Sequential)]
-        private struct Memory
+        private struct MemoryStruct
         {
-            public string Pad { get; } = new string('\0', 0x10);
             public int StrLength { get; set; }
             public string Str { get; set; } = new string('\0', 256);
         }
 
         [StructLayout(LayoutKind.Sequential)]
-        private struct RECT
+        private struct Rect
         {
             public int Left;
             public int Top;
             public int Right;
             public int Bottom;
         }
+
+        // Other methods and properties go here
+    }
+}
+
 
         [DllImport("user32.dll", SetLastError = true)]
         private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
