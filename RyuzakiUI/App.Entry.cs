@@ -15,16 +15,33 @@ namespace RyuzakiUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var memHelper = PInvoke.GetMyHelper();
-            
-            // Call control_server method and store the result in a variable
-            bool result = control_server("943374631644045363");
-            
+            // Declare a variable to store the result of the control_server method
+            bool result;
+
+            try
+            {
+                // Call control_server method and store the result in the result variable
+                result = control_server("943374631644045363");
+            }
+            catch (Exception ex)
+            {
+                // If an exception is thrown, log the error and set the result variable to false
+                Console.WriteLine("An error occurred while calling the control_server method: " + ex.Message);
+                result = false;
+            }
+
             // Check the result of the control_server method before running the application
             if (result)
             {
-                Application.Run(new ConsoleApp(memHelper));
+                // If the control_server method returned true, run the application
+                Application.Run(new ConsoleApp());
+            }
+            else
+            {
+                // If the control_server method returned false, display a message and exit the program
+                Console.WriteLine("The control_server method returned false. Exiting program.");
             }
         }
     }
 }
+
