@@ -137,7 +137,7 @@ void OnProjectileUpdate(Projectile* unk) {
 		else {
 			Retire(unk);
 		}
-	}
+	} 
 }
 
 
