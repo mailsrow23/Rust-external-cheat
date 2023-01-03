@@ -6,46 +6,123 @@ using System.Threading.Tasks;
 
 namespace Dissector
 {
-    public enum PFlags
-    {
-        Unused1 = 1,
-        Unused2 = 2,
-        IsAdmin = 4,
-        ReceivingSnapshot = 8,
-        Sleeping = 16,
-        Spectating = 32,
-        Wounded = 64,
-        IsDeveloper = 128,
-        Connected = 256,
-        VoiceMuted = 512,
-        ThirdPersonViewmode = 1024,
-        EyesViewmode = 2048,
-        ChatMute = 4096,
-        NoSprint = 8192,
-        Aiming = 16384,
-        DisplaySash = 32768,
-        Workbench1 = 1048576,
-        Workbench2 = 2097152,
-        Workbench3 = 4194304
-    }
+public enum PlayerFlags
+{
+    /// <summary>
+    /// Unused flag.
+    /// </summary>
+    Unused1 = 1,
 
     /// <summary>
-    /// ModelState flags
+    /// Unused flag.
     /// </summary>
-    public enum MFlags
-    {
-        Ducked = 1,
-        Jumped = 2,
-        OnGround = 4,
-        Sleeping = 8,
-        Sprinting = 16, // 0x00000010
-        OnLadder = 32, // 0x00000020
-        Flying = 64, // 0x00000040
-        Aiming = 128, // 0x00000080
-        Prone = 256, // 0x00000100
-        Mounted = 512, // 0x00000200
-        Relaxed = 1024, // 0x00000400
-    }
+    Unused2 = 2,
+
+    /// <summary>
+    /// Flag indicating that the player has admin privileges.
+    /// </summary>
+    IsAdmin = 4,
+
+    /// <summary>
+    /// Flag indicating that the player is currently receiving a snapshot.
+    /// </summary>
+    ReceivingSnapshot = 8,
+
+    /// <summary>
+    /// Flag indicating that the player is currently sleeping.
+    /// </summary>
+    Sleeping = 16,
+
+    /// <summary>
+    /// Flag indicating that the player is currently spectating.
+    /// </summary>
+    Spectating = 32,
+
+    /// <summary>
+    /// Flag indicating that the player is currently wounded.
+    /// </summary>
+    Wounded = 64,
+
+    /// <summary>
+    /// Flag indicating that the player is a developer.
+    /// </summary>
+    IsDeveloper = 128,
+
+    /// <summary>
+    /// Flag indicating that the player is currently connected.
+    /// </summary>
+    Connected = 256,
+
+    /// <summary>
+    /// Flag indicating that the player's voice is currently muted.
+    /// </summary>
+    VoiceMuted = 512,
+
+    /// <summary>
+    /// Flag indicating that the player is currently in third-person view mode.
+    /// </summary>
+    ThirdPersonViewmode = 1024,
+
+    /// <summary>
+    /// Flag indicating that the player is currently in eyes view mode.
+    /// </summary>
+    EyesViewmode = 2048,
+
+    /// <summary>
+    /// Flag indicating that the player's chat is currently muted.
+    /// </summary>
+    ChatMute = 4096,
+
+    /// <summary>
+    /// Flag indicating that the player is unable to sprint.
+    /// </summary>
+    NoSprint = 8192,
+
+    /// <summary>
+    /// Flag indicating that the player is currently aiming.
+    /// </summary>
+    Aiming = 16384,
+
+    /// <summary>
+    /// Flag indicating that the player's sash is currently being displayed.
+    /// </summary>
+    DisplaySash = 32768,
+
+    /// <summary>
+    /// Unused flag.
+    /// </summary>
+    Workbench1 = 1048576,
+
+    /// <summary>
+    /// Unused flag.
+    /// </summary>
+    Workbench2 = 2097152,
+
+    /// <summary>
+    /// Unused flag.
+    /// </summary>
+    Workbench3 = 4194304
+}
+
+/// <summary>
+/// Model state flags.
+/// </summary>
+public enum ModelStateFlags
+{
+    /// <summary>
+    /// Flag indicating that the model is currently ducked.
+    /// </summary>
+    Ducked = 1,
+
+    /// <summary>
+    /// Flag indicating that the model has recently jumped.
+    /// </summary>
+    Jumped = 2,
+
+    /// <summary>
+    /// Flag indicating that the model is currently on the ground.
+    /// </summary>
+    
 }
 
 
