@@ -1,19 +1,52 @@
-### RUST AIMBOT
-![sadasd](https://img.shields.io/badge/EXE-EFA00B?style=for-the-badge&logo=IntelliJ+IDEA&logoColor=black)
-![asfasf](https://img.shields.io/badge/-Windows-28C2FF?style=for-the-badge&logo=windows&logoColor=black)
-![asdas](https://img.shields.io/badge/INstall_EXE-372248?style=for-the-badge&logo=mysql&logoColor=white)
+<h1 align="center">
+  Rust internal ➰
+</h1>
 
-    
+<p align="center">
+  Rust Internal Isolated files to use at your own risk.
+</p>
+
+
+
+<p align="center">
+  <img src="https://img.shields.io/github/languages/top/Slackes/Valorant-Spoofer?style=flat-square"/>
+  <img src="https://img.shields.io/github/last-commit/Slackes/Valorant-Spoofer?style=flat-square"/>
+  <img src="https://img.shields.io/github/stars/Slackes/Valorant-Spoofer?color=5ac18e&label=Stars&style=flat-square"/>
+
+</p>
+
+---
+
+## <a id="content"></a>📜 〢 Read
+
+- Use it at your own risk. Because this is the free version and the chances of being detected are quite high.
+- Read all installation steps to understand.
+
+
+## <a id="features"></a>🛑 〢 Features
+
+```
+FEATURE
  
-### ⚠ 〢 READ   
-- Use at your own risk
-- Free not sell 
-- Public 
-- Read All
+AIMBOT
+- Head , Body , etc
+- Silent Aim (70% not safe)
 
-### Feature
+ESP
+- 3D Bounding Box  
+- Corner Box
+- Basic Box
+- Snaplines
 
-- Aimbot
+MISC
+- Save & Config
+```
+
+
+## <a id="setup2"></a> 📞 〢 Support
+- If you have any questions or don't understand the instructions, join Discord for help.
+- [Discord](https://discord.gg/MBTkVcJefp)
+
   
 ---
 
@@ -78,6 +111,12 @@
 A website that I created to introduce myself from start to finish. hope you like it [Slackes.me](http://slackes.me/)
 
 ---
+
+  <br>
+
+<p align="center">
+  Copyright © 2021 - 2022
+<br>
 
 
 
