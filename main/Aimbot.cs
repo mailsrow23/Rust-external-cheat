@@ -28,13 +28,20 @@ class Aimbot
         return radian * 180f / M_PI;
     }
 
-    private static Vector2 CalcAngle(Vector3 localPos, Vector3 enemyPos)
-    {
-        Vector3 dir = new Vector3(localPos.X - enemyPos.X, localPos.Y - enemyPos.Y, localPos.Z - enemyPos.Z);
-        float pitch = ToDegree((float)Math.Asin(dir.Y / GetLength(dir)));
-        float yaw = ToDegree((float)-Math.Atan2(dir.X, -dir.Z));
-        return new Vector2(pitch, yaw);
-    }
+private static Vector2 CalcAngle(Vector3 localPos, Vector3 enemyPos)
+{
+    // Calculate the difference between the two positions
+    Vector3 dir = enemyPos - localPos;
+    
+    // Calculate the pitch angle
+    float pitch = ToDegree((float)Math.Asin(dir.Y / dir.Length()));
+    
+    // Calculate the yaw angle
+    float yaw = ToDegree((float)Math.Atan2(dir.X, dir.Z));
+    
+    // Return a Vector2 object with the pitch and yaw angles as its x and y components, respectively
+    return new Vector2(pitch, yaw);
+}
 
     private static Vector2 Normalize(Vector2 angle)
     {
