@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  Rust Internal Isolated files to use at your own risk.
+  Internal that you will need to install an additional game client.
 </p>
 
 
@@ -25,28 +25,24 @@
 
 ## <a id="features"></a>🛑 〢 Features
 
-```
-FEATURE
- 
-AIMBOT
+### AIMBOT
 - Head , Body , etc
 - Silent Aim (70% not safe)
 
-ESP
+### ESP
 - 3D Bounding Box  
 - Corner Box
 - Basic Box
 - Snaplines
 
-MISC
+### MISC
 - Save & Config
-```
 
 
-## <a id="setup2"></a> 📞 〢 Support
-- If the free version does not work The last option is to pay. Read more below.
-- If you have any questions or don't understand the instructions, join Discord for help.
-- [Discord](https://discord.gg/MBTkVcJefp)
+## <a id="setup2"></a> 🗒 〢 Product
+- If the free version does not work You can pay to buy a personal project.
+- Safe  on main account without getting banned / no need to turn off virus scan Scroll down to the bottom to read more.
+- [Discord](https://discord.gg/MBTkVcJefp) 
 
   
 ---
@@ -86,7 +82,7 @@ MISC
  
 ## 💬 ・[Discord](https://discord.gg/MBTkVcJefp) 
 
- ### 🛒〢 `PRODUCT`
+ ### 🛒〢 `SHOP`
  
 <table>
 <tr>
@@ -103,7 +99,7 @@ MISC
 - Undetected
 - Custom Feature if you want `(Example: Aimbot + Esp + Skin Changers)`
 
-### ⚓〢 Warranty
+### 📌〢 Warranty
 
 - Support 24 Hr
 - Update Free
