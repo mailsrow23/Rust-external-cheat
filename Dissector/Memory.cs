@@ -31,6 +31,31 @@ namespace Covet.Memory
         }
 
         // Other methods and properties go here
+
+        private static Process GetProcess()
+        {
+            if (process == null || process.HasExited)
+            {
+                process = Process.GetProcessesByName(WindowName).FirstOrDefault();
+            }
+
+            return process;
+        }
+
+        private static SafeHandle GetProcessHandle()
+        {
+            if (processHandle == null || processHandle.IsClosed || processHandle.IsInvalid)
+            {
+                Process process = GetProcess();
+
+                if (process != null)
+                {
+                    processHandle = NativeMethods.OpenProcess(ProcessAccessFlags.All, false, process.Id);
+                }
+            }
+
+            return processHandle;
+        }
     }
 }
 
