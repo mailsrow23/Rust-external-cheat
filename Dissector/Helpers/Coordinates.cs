@@ -20,8 +20,8 @@ public static bool WorldToScreen(SharpDX.Matrix localRotation, Vector3 enemy, ou
     // Calculate the 'w' value using the dot product of the translation vector and the enemy's position, plus the M44 element of the transposed rotation matrix
     var w = Vector3.Dot(translationVector, enemy) + transposedRotation.M44;
 
-    // If the 'w' value is less than a certain threshold (0.098f0f0211), return false to indicate that the conversion was not successful
-    if (w < 0.098f0f0211) return false;
+    // If the 'w' value is less than or equal to zero, return false to indicate that the conversion was not successful
+    if (w <= 0) return false;
 
     // Calculate the 'y' value using the dot product of the 'up' vector and the enemy's position, plus the M24 element of the transposed rotation matrix
     var y = Vector3.Dot(up, enemy) + transposedRotation.M24;
@@ -30,12 +30,13 @@ public static bool WorldToScreen(SharpDX.Matrix localRotation, Vector3 enemy, ou
     var x = Vector3.Dot(right, enemy) + transposedRotation.M14;
 
     // Calculate the 2D screen coordinates of the enemy by applying a transformation to the 'x' and 'y' values
-    screen.X = ((ScreenWidth) * (1f + x / w) / 2);
-    screen.Y = ((ScreenHeight) * (1f - y / w) / 2);
+    screen.X = ((ScreenWidth / w) * x + ScreenWidth / 2);
+    screen.Y = ((ScreenHeight / w) * y + ScreenHeight / 2);
     screen.Z = w;
 
     return true;
 }
+
 
 
         private static float D3DxVec3Dot(Vector3 a, Vector3 b)
