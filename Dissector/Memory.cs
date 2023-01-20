@@ -42,7 +42,7 @@ namespace Covet.Memory
             return process;
         }
 
-        private static SafeHandle GetProcessHandle()
+private static SafeHandle GetProcessHandle()
         {
             if (processHandle == null || processHandle.IsClosed || processHandle.IsInvalid)
             {
@@ -94,7 +94,7 @@ namespace Covet.Memory
             return ByteArrayToStructure<T>(buffer);
         }
 
-        private static unsafe byte[] ReadMemory(IntPtr address, int numOfBytes, out long bytesRead)
+private static unsafe byte[] ReadMemory(IntPtr address, int numOfBytes, out long bytesRead)
         {
             byte[] buffer = new byte[numOfBytes];
 
