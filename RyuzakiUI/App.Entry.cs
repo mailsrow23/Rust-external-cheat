@@ -1,4 +1,3 @@
-using Dissector.Helpers;
 using System;
 using System.Windows.Forms;
 
@@ -21,7 +20,7 @@ namespace RyuzakiUI
             try
             {
                 // Call control_server method and store the result in the result variable
-                result = control_server("943374631644045363");
+                result = ControlServer();
             }
             catch (Exception ex)
             {
@@ -42,6 +41,13 @@ namespace RyuzakiUI
                 Console.WriteLine("The control_server method returned false. Exiting program.");
             }
         }
+
+        private static bool ControlServer()
+        {
+            // Code to control the server goes here
+            // ...
+
+            return true;
+        }
     }
 }
-
