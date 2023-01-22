@@ -132,12 +132,17 @@ var body = document.body,
 
 });
 
-/* detect Escape key when the overlay is open */
-document.body.addEventListener('keyup', (ev) => {
-   if (ev.key === "Escape" && overlay.getAttribute('aria-hidden') === 'false') {
-      overlay.setAttribute('aria-hidden', 'true');
-      body.classList.toggle('noscroll', false);
-      openingBtt.focus();
-      openingBtt = null;
-   }
-})
+document.addEventListener('keyup', (ev) => {
+    if (ev.key === "Escape") {
+        const overlay = document.querySelector('.overlay');
+        if (overlay && !overlay.hasAttribute('aria-hidden')) {
+            overlay.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('noscroll');
+            if (openingBtt) {
+                openingBtt.focus();
+                openingBtt = null;
+            }
+        }
+    }
+});
+
