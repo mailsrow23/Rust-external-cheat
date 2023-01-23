@@ -112,33 +112,28 @@ private void _button_StartObjDump_Click(object sender, EventArgs e)
         /// <param name="e"></param>
 
 
-private void _consoleTimer_Elapsed(object sender)
+private async void _consoleTimer_Elapsed(object sender, ElapsedEventArgs e)
 {
-    try
+    while (_messageQueue.TryDequeue(out string message))
     {
-        var message = "";
-        while (_messageQueue.TryDequeue(out message))
+        if (listBox_Console.InvokeRequired)
         {
-            if (listBox_Console.InvokeRequired)
-            {
-                listBox_Console.Invoke((MethodInvoker)(() => listBox_Console.Items.Add(message)));
-                listBox_Console.Invoke((MethodInvoker)(() => listBox_Console.SelectedIndex = listBox_Console.Items.Count - 1));
-                listBox_Console.Invoke((MethodInvoker)(() => listBox_Console.SelectedIndex = -1));
-            }
-            else
+            await listBox_Console.InvokeAsync(() =>
             {
                 listBox_Console.Items.Add(message);
                 listBox_Console.SelectedIndex = listBox_Console.Items.Count - 1;
                 listBox_Console.SelectedIndex = -1;
-            }
+            });
+        }
+        else
+        {
+            listBox_Console.Items.Add(message);
+            listBox_Console.SelectedIndex = listBox_Console.Items.Count - 1;
+            listBox_Console.SelectedIndex = -1;
         }
     }
-    catch (Exception ex)
-    {
-        //log exception here
-        Console.WriteLine("An error occurred: " + ex.Message);
-    }
 }
+
 
         
 private void _checkBox_ToggleAnimals_CheckedChanged(object sender, EventArgs e)
