@@ -86,73 +86,47 @@ private static Vector2 CalcAngle(Vector3 localPos, Vector3 enemyPos)
         return bone;
     }
 
-    public static bool ScreenToEnemy(Vector3 position)
-    {
-        Visuals.ESP.WorldToScreen(position, out vec2);
-        return vec2.X > 0 && vec2.Y > 0 && vec2.X < Screen.PrimaryScreen.Bounds.Width && vec2.Y < Screen.PrimaryScreen.Bounds.Height;
-    }
-    
-    // Improved Run method
-    public static void Run()
-    {
-        // Find the nearest enemy within the specified FOV and distance
-        float bestFov = Settings.Aimbot
+public static bool ScreenToEnemy(Vector3 position)
+{
+    Vector2 vec2;
+    Visuals.ESP.WorldToScreen(position, out vec2);
+    return vec2.X > 0 && vec2.Y > 0 && vec2.X < Screen.PrimaryScreen.Bounds.Width && vec2.Y < Screen.PrimaryScreen.Bounds.Height;
+}
 
-        Entity nearestPlayer = null;
-        foreach (Entity entity in EntityUpdater.EntityUpdater.EntityList)
+// Improved Run method
+public static Entity Run()
+{
+    // Find the nearest enemy within the specified FOV and distance
+    float bestFov = Settings.Aimbot;
+
+    // Initialize nearestPlayer as null
+    Entities nearestPlayer = null;
+    foreach (Entities entity in EntitiesUpdater.EntityUpdater.EntityList)
+    {
+        if (entity.LocalPlayer)
         {
-            if (entity.LocalPlayer)
-            {
-                LocalPlayer = entity;
-                continue;
-            }
-
-            float distance = Vector3.Distance(LocalPlayer.Position, entity.Position);
-            if (distance > 300 || entity.Health < 0.1)
-            {
-                continue;
-            }
-
-            float fov = ScreenToEnemy(entity.Position);
-            if (fov < bestFov)
-            {
-                bestFov = (int)fov;
-                nearestPlayer = entity;
-            }
+            continue;
         }
 
-        // Aim at the nearest enemy if it was found
-        if (LocalPlayer != null && nearestPlayer != null)
+        // Check if the entity is alive and within distance
+        if (entity.Health < 0.1 || Vector3.Distance(LocalPlayer.Position, entity.Position) > 300)
         {
-            Vector3 aimPos = nearestPlayer.Position;
-            Vector2 currentAngle = LocalPlayer.ViewAngle;
-            Vector2 recoilAngle = LocalPlayer.RecoilAngle;
-
-            // Check if the right mouse button is pressed
-            if (Convert.ToBoolean(Memory.Memory.GetAsyncKeyState(System.Windows.Forms.Keys.RButton) & 0x8000))
-            {
-                Vector2 angle = CalcAngle(LocalPlayer.Position, aimPos) - LocalPlayer.ViewAngle;
-                Vector2 finalAngle = LocalPlayer.ViewAngle + angle;
-                finalAngle = ClampAngles(finalAngle);
-                recoilAngle = ClampAngles(recoilAngle);
-
-                // Apply RCS
-                finalAngle.X -= recoilAngle.X;
-                finalAngle.Y -= recoilAngle.Y;
-
-                Vector2 delta = ClampAngle(finalAngle - currentAngle);
-                delta = ClampAngles(delta);
-                finalAngle.X = currentAngle.X += delta.X / Settings.Aimbot.Smoothness;
-                finalAngle.Y = currentAngle.Y += delta.Y / Settings.Aimbot.Smoothness;
-                finalAngle = ClampAngles(finalAngle);
-                finalAngle = Normalize(finalAngle);
-
-                // Set the view angles
-                LocalPlayer.ViewAngle = finalAngle;
-            }
+            continue;
         }
 
-        // Sleep for a short time to prevent CPU overload
-        Thread.Sleep(5);
+        // Check if the entity is within the screen bounds
+        if (!ScreenToEnemy(entity.Position))
+        {
+            continue;
+        }
+
+        float fov = CalculateFov(LocalPlayer.Position, entity.Position);
+        if (fov < bestFov)
+        {
+            bestFov = fov;
+            nearestPlayer = entity;
+        }
     }
+
+    return nearestPlayer;
 }
