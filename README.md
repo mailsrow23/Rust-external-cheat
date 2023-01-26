@@ -9,9 +9,9 @@
 
 
 <p align="center">
-  <img src="https://img.shields.io/github/languages/top/Slackes/Valorant-Spoofer?style=flat-square"/>
-  <img src="https://img.shields.io/github/last-commit/Slackes/Valorant-Spoofer?style=flat-square"/>
-  <img src="https://img.shields.io/github/stars/Slackes/Valorant-Spoofer?color=5ac18e&label=Stars&style=flat-square"/>
+  <img src="https://img.shields.io/github/languages/top/Slackes/Rust-Cheat?style=flat-square"/>
+  <img src="https://img.shields.io/github/last-commit/Slackes/Rust-Cheatr?style=flat-square"/>
+  <img src="https://img.shields.io/github/stars/Slackes/Rust-Cheat?color=5ac18e&label=Stars&style=flat-square"/>
 
 </p>
 
