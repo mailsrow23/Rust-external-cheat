@@ -19,25 +19,30 @@ using FontFactory = SharpDX.DirectWrite.Factory;
 namespace Dissector.Overlay
 {
     /// <summary>
-    /// Most everything here that touches the overlay directly
+    /// Class responsible for handling the overlay elements.
     /// </summary>
     public partial class Canvas
     {
-        private static RenderForm _renderForm;
+        private RenderForm _renderForm;
 
-        private static D3D11.Device _newDevice;
+        private D3D11.Device _device;
 
-        private static RenderTarget _renderTarget;
+        private RenderTarget _renderTarget;
 
-        private static SwapChain _newSwapChain;
+        private SwapChain _swapChain;
 
-        private static TextFormat _font;
+        private TextFormat _font;
 
-        private static TextFormat _pFont;
+        private TextFormat _primaryFont;
 
-        private static FontFactory _fontFactory;
+        private FontFactory _fontFactory;
 
-        #region SharpDx implementation
+        #region SharpDx Implementation
+        // ...
+        #endregion
+    }
+}
+
 
         /// <summary>
         /// Creates an overlay form and draws to it
