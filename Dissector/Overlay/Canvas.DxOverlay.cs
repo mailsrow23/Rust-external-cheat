@@ -371,51 +371,40 @@ namespace Dissector.Overlay
         /// Sharpdx form that we'll be overlaying our window with
         /// </summary>
         /// <returns></returns>
-        private static RenderForm CreateRenderForm()
-        {
-            RECT clientRect;
+private static RenderForm CreateRenderForm()
+{
+    RECT clientRect;
 
-            /* Set our render forms client size the same as the rust window client size */
-            var rustClientRect = PInvoke.GetClientRect(PInvoke.FindWindow(null, "Rust"), out clientRect);
+    /* Get the client size of the "Rust" window */
+    var rustClientRect = PInvoke.GetClientRect(PInvoke.FindWindow(null, "Rust"), out clientRect);
 
-            var screenWidth = clientRect.Right - clientRect.Left;
-            var screenHeight = clientRect.Bottom - clientRect.Top;
+    int screenWidth = clientRect.Right - clientRect.Left;
+    int screenHeight = clientRect.Bottom - clientRect.Top;
 
-            Coordinates.ScreenWidth = screenWidth;
-            Coordinates.ScreenHeight = screenHeight;
-            Coordinates.ScreenCenter = new SharpDX.Mathematics.Interop.RawVector2(screenWidth / 2, screenHeight / 2);
+    Coordinates.ScreenWidth = screenWidth;
+    Coordinates.ScreenHeight = screenHeight;
+    Coordinates.ScreenCenter = new SharpDX.Mathematics.Interop.RawVector2(screenWidth / 2, screenHeight / 2);
 
-            // Create render target window
-            var form = new RenderFormEx
-            {
-                BackColor = System.Drawing.Color.White,
-                ClientSize = new System.Drawing.Size(screenWidth, screenHeight),
-                Name = "Get Back To Work! - Alarm Form",
-                AllowUserResizing = false,
-                StartPosition = System.Windows.Forms.FormStartPosition.Manual,
-                Text = "",
-                TopMost = true,
-                FormBorderStyle = FormBorderStyle.None,
-                TransparencyKey = System.Drawing.Color.White,
-                ShowInTaskbar = false,
-                ShowIcon = false
-            };
+    // Create the form
+    var form = new RenderFormEx
+    {
+        BackColor = System.Drawing.Color.White,
+        ClientSize = new System.Drawing.Size(screenWidth, screenHeight),
+        Name = "Get Back To Work! - Alarm Form",
+        Text = "Get Back To Work! Alarm",
+        StartPosition = System.Windows.Forms.FormStartPosition.Manual,
+        FormBorderStyle = FormBorderStyle.None,
+        ShowInTaskbar = false,
+        TopMost = true,
+        TransparencyKey = System.Drawing.Color.White
+    };
 
-            form.FormClosing += Form_FormClosing;
+    form.FormClosing += Form_FormClosing;
 
-            return form;
-        }
+    return form;
+}
 
-        /// <summary>
-        /// Dispose resources before our form closes
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        static void Form_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DisposeResources();            
-        }
-
-        #endregion
-    }
+private static void Form_FormClosing(object sender, FormClosingEventArgs e)
+{
+    DisposeResources();
 }
