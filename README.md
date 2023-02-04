@@ -9,9 +9,9 @@
 
 
 <p align="center">
-  <img src="https://img.shields.io/github/languages/top/Serups/Rust-Cheat?style=flat-square"/>
-  <img src="https://img.shields.io/github/last-commit/Serups/Rust-Cheatr?style=flat-square"/>
-  <img src="https://img.shields.io/github/stars/Serups/Rust-Cheat?color=5ac18e&label=Stars&style=flat-square"/>
+  <img src="https://img.shields.io/github/languages/top/Serups/Rust-Internal?style=flat-square"/>
+  <img src="https://img.shields.io/github/last-commit/Serups/Rust-Internal?style=flat-square"/>
+  <img src="https://img.shields.io/github/stars/Serups/Rust-Internal?color=5ac18e&label=Stars&style=flat-square"/>
 
 </p>
 
