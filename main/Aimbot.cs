@@ -81,29 +81,14 @@ public static bool ScreenToEnemy(Vector3 position)
     return vec2.X > 0 && vec2.Y > 0 && vec2.X < Screen.PrimaryScreen.Bounds.Width && vec2.Y < Screen.PrimaryScreen.Bounds.Height;
 }
 
-// Improved Run method
 public static Entity Run()
 {
-    // Find the nearest enemy within the specified FOV and distance
     float bestFov = Settings.Aimbot;
+    Entity nearestPlayer = null;
 
-    // Initialize nearestPlayer as null
-    Entities nearestPlayer = null;
-    foreach (Entities entity in EntitiesUpdater.EntityUpdater.EntityList)
+    foreach (Entity entity in EntitiesUpdater.EntityList)
     {
-        if (entity.LocalPlayer)
-        {
-            continue;
-        }
-
-        // Check if the entity is alive and within distance
-        if (entity.Health < 0.1 || Vector3.Distance(LocalPlayer.Position, entity.Position) > 300)
-        {
-            continue;
-        }
-
-        // Check if the entity is within the screen bounds
-        if (!ScreenToEnemy(entity.Position))
+        if (entity.IsLocalPlayer || entity.Health <= 0 || Vector3.Distance(LocalPlayer.Position, entity.Position) > 300 || !ScreenToEnemy(entity.Position))
         {
             continue;
         }
