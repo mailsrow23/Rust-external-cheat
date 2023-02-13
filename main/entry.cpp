@@ -2,27 +2,22 @@
 
 namespace injector
 {
-	
-static injector_upload ( void* instance, void* reserved )
-	
-{
-	__try
-	{
-		std::memset( instance, 0, PAGE_SIZE );
+  static void injector_upload(void* instance, void* reserved)
+  {
+    __try
+    {
+      std::memset(instance, 0, PAGE_SIZE);
 
-		if( rust::Create() )
-		{
-
-		}
-		else
-		{
-			TRACE( "%s: rust::Create() Failed!", ATOM_FUNCTION );
-		}
-	}
-	__except( EXCEPTION_EXECUTE_HANDLER )
-	{
-		TRACE( "%s: Exception occured = '0x%08X'!", ATOM_FUNCTION, GetExceptionCode() );
-	}
+      if (!rust::Create())
+      {
+        TRACE("%s: Failed to create rust object!", __FUNCTION__);
+      }
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER)
+    {
+      TRACE("%s: Exception occurred with code 0x%08X!", __FUNCTION__, GetExceptionCode());
+    }
+  }
 }
 
 void ImageFree( void* reserved )
