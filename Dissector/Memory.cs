@@ -5,12 +5,9 @@ using System.Diagnostics;
 
 namespace Covet.Memory
 {
-    class MemoryManager
+    public static class MemoryManager
     {
-        private static readonly string WindowName = "Rust";
-        private static Process process;
-        private static SafeHandle processHandle;
-        private static IntPtr unityPlayer;
+        public const string WindowName = "Rust";
 
         private static readonly MemoryModule memoryModule = new MemoryModule("RustClient");
 
@@ -18,11 +15,11 @@ namespace Covet.Memory
         private struct MemoryStruct
         {
             public int StrLength { get; set; }
-            public string Str { get; set; } = new string('\0', 256);
+            public string Str { get; set; }
         }
 
         [StructLayout(LayoutKind.Sequential)]
-        private struct Rect
+        private struct WindowRect
         {
             public int Left;
             public int Top;
@@ -30,17 +27,29 @@ namespace Covet.Memory
             public int Bottom;
         }
 
-        // Other methods and properties go here
-
-        private static Process GetProcess()
+        public static Process GetProcess()
         {
-            if (process == null || process.HasExited)
+            try
             {
-                process = Process.GetProcessesByName(WindowName).FirstOrDefault();
-            }
+                var process = Process.GetProcessesByName(WindowName).FirstOrDefault();
+                if (process == null)
+                {
+                    throw new ApplicationException($"Process with name {WindowName} not found.");
+                }
 
-            return process;
+                return process;
+            }
+            catch (Exception ex)
+            {
+                // log the exception and return null or throw a custom exception
+                return null;
+            }
         }
+
+        // other methods and properties go here
+    }
+}
+
 
 private static SafeHandle GetProcessHandle()
         {
