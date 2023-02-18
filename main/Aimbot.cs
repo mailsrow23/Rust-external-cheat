@@ -81,25 +81,37 @@ public static bool ScreenToEnemy(Vector3 position)
     return vec2.X > 0 && vec2.Y > 0 && vec2.X < Screen.PrimaryScreen.Bounds.Width && vec2.Y < Screen.PrimaryScreen.Bounds.Height;
 }
 
-public static Entity Run()
+public static Entity FindNearestEnemy()
 {
-    float bestFov = Settings.Aimbot;
-    Entity nearestPlayer = null;
+    Entity nearestEnemy = null;
+    float closestDistance = float.MaxValue;
 
     foreach (Entity entity in EntitiesUpdater.EntityList)
     {
-        if (entity.IsLocalPlayer || entity.Health <= 0 || Vector3.Distance(LocalPlayer.Position, entity.Position) > 300 || !ScreenToEnemy(entity.Position))
+        if (entity.IsLocalPlayer || entity.Health <= 0)
         {
             continue;
         }
 
-        float fov = CalculateFov(LocalPlayer.Position, entity.Position);
-        if (fov < bestFov)
+        float distance = Vector3.Distance(LocalPlayer.Position, entity.Position);
+        if (distance > 300 || !IsEnemyVisible(entity))
         {
-            bestFov = fov;
-            nearestPlayer = entity;
+            continue;
+        }
+
+        if (distance < closestDistance)
+        {
+            closestDistance = distance;
+            nearestEnemy = entity;
         }
     }
 
-    return nearestPlayer;
+    return nearestEnemy;
 }
+
+private static bool IsEnemyVisible(Entity entity)
+{
+    // TODO: Implement visibility check based on game mechanics
+    return true;
+}
+
