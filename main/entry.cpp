@@ -162,31 +162,58 @@ void InitializeDriver() {
 
 int main(int argc, char** argv)
 {
-    LoadLibraryA("WINMM.dll");
-    m_render = new render_base(NULL() + "script.cfg");
-    m_render->Game_Loop();
+    // Load the WINMM.dll library
+    if (LoadLibraryA("WINMM.dll") == NULL)
+    {
+        throw std::runtime_error("Failed to load WINMM.dll");
+    }
+
+    // Create an instance of the render_base class
+    render_base* m_render = new render_base("script.cfg");
+
+    // Start the game loop of the instance
+    try
+    {
+        m_render->Game_Loop();
+    }
+    catch (const std::exception& e)
+    {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
+    }
+
+    // Clean up
+    delete m_render;
     return 0;
 }
 
+void hk_dofixedupdate(playerwalkmovement* base_movement, modelstate* modelstate)
+{
+    // Modify the behavior of the DoFixedUpdate function based on some conditions
 
-	void hk_dofixedupdate(playerwalkmovement* base_movement, modelstate* modelstate) {
-		if (esp::local_player && settings::misc::always_sprint) {
-			bool is_busy = get_ducked(modelstate) | IsSwimming(esp::local_player);
+    if (esp::local_player && settings::misc::always_sprint)
+    {
+        bool is_busy = get_ducked(modelstate) | IsSwimming(esp::local_player);
+        float speed = GetSpeed(esp::local_player, 1, is_busy);
 
-			float speed = GetSpeed(esp::local_player, 1, is_busy);
+        // Reset and create device objects for the ImGui user interface
+        ImGui_ImplDX9_InvalidateDeviceObjects();
+        HRESULT hr = g_pd3dDevice->Reset(&g_d3dpp);
+        if (hr != D3D_OK)
+        {
+            throw std::runtime_error("Failed to reset the device");
+        }
+        ImGui_ImplDX9_CreateDeviceObjects();
 
-		ImGui_ImplDX9_InvalidateDeviceObjects();
-		HRESULT hr = g_pd3dDevice->Reset(&g_d3dpp);
-		if (hr == D3DERR_INVALIDCALL)
-			IM_ASSERT(0);
-		ImGui_ImplDX9_CreateDeviceObjects();
+        if (!flying)
+        {
+            // Modify the value of a member variable of the playerwalkmovement object
+            reinterpret_cast<vector3*>(base_movement + 0x34)->set(vel);
 
-			if (!flying) {
-				*reinterpret_cast<vector3*>(base_movement + 0x34) = vel;
+            // Modify the value of a member variable of the modelstate object
+            set_sprinting(modelstate, true);
+        }
+    }
 
-				set_sprinting(modelstate, true);
-			}
-		}
-
-		orig::DoFixedUpdate(base_movement, modelstate);
-	}
+    // Call the original DoFixedUpdate function
+    orig::DoFixedUpdate(base_movement, modelstate);
+}
