@@ -1,18 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Dissector.Helpers
+/// <summary>
+/// Represents the margins of a rectangular area.
+/// </summary>
+[StructLayout(LayoutKind.Sequential)]
+public struct MARGIN
 {
-    [StructLayout(LayoutKind.Sequential)]
-    public struct MARGIN
-    {
-        public int cxLeftWidth;
-        public int cxRightWidth;
-        public int cyTopHeight;
-        public int cyBottomHeight;
-    }
+    /// <summary>
+    /// The width of the left margin.
+    /// </summary>
+    public int cxLeftWidth;
+
+    /// <summary>
+    /// The width of the right margin.
+    /// </summary>
+    public int cxRightWidth;
+
+    /// <summary>
+    /// The height of the top margin.
+    /// </summary>
+    public int cyTopHeight;
+
+    /// <summary>
+    /// The height of the bottom margin.
+    /// </summary>
+    public int cyBottomHeight;
 }
