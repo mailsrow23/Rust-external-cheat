@@ -32,38 +32,46 @@
     }
 }
 
-bool DoHit(Projectile* pr, DWORD64 ht, vector3 point, vector3 normal, TraceInfo info, bool& exit) {
-		bool result = false;
-		if (!IsAlive())
-			return result;
-
-		auto material = info.material != 0 ? GetName(info.material)->str : (_(L"generic"));
-
-		bool canIgnore = unity::is_visible(sentPosition(), currentPosition() + currentVelocity().Normalized() * 0.01f);
-		if (!canIgnore) {
-			integrity(0);
-			return true;
-		}
-
-		float org;
-		if (canIgnore) {
-			vector3 attackStart = Simulate(false, true);
-
-			safe_write(ht + 0x14, Ray(attackStart, vector3()), Ray);
-		}
-
-		if (canIgnore && m_wcsicmp(material, _(L"Flesh"))) {
-			DWORD64 Tra = safe_read(ht + 0xB0, DWORD64);
-			if (Tra) {
-				auto st = _(L"head");
-
-				set_name(Tra, st);
-			}
-
-			result = Do_Hit(pr, ht, point, normal);
-			sentPosition(currentPosition());
-
-		}
-		return result;
-	}
+// Check if the projectile hits an object
+bool CheckHit(Projectile* projectile, DWORD64 hitInfo, vector3 hitPoint, vector3 hitNormal, TraceInfo traceInfo, bool& exit) {
+    bool hitSuccessful = false;
     
+    // Check if the object being hit is alive
+    if (!IsObjectAlive()) {
+        return hitSuccessful;
+    }
+
+    // Determine the material of the object being hit
+    auto materialName = traceInfo.material != 0 ? GetName(traceInfo.material)->str : MaterialType::Generic;
+    
+    // Check if the object being hit is visible
+    bool isVisible = IsObjectVisible();
+    if (!isVisible) {
+        // If the object is not visible, set the integrity to 0 and return true
+        SetObjectIntegrity(0);
+        return true;
+    }
+
+    // Simulate the attack and set the attack start point
+    float org;
+    if (isVisible) {
+        vector3 attackStart = SimulateAttack(false, true);
+        safe_write(hitInfo + 0x14, Ray(attackStart, vector3()), Ray);
+    }
+
+    // If the material of the object being hit is "Flesh", set the name of the object to "head"
+    if (isVisible && materialName == MaterialType::Flesh) {
+        DWORD64 object = safe_read(hitInfo + 0xB0, DWORD64);
+        if (object) {
+            SetObjectName(object, ObjectName::Head);
+        }
+        
+        // Call a function to handle the hit event
+        hitSuccessful = HandleHitEvent(projectile, hitInfo, hitPoint, hitNormal);
+        
+        // Update the position of the object
+        SetObjectPosition(CurrentPosition());
+    }
+    
+    return hitSuccessful;
+}
