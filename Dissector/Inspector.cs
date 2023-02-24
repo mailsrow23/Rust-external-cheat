@@ -281,32 +281,28 @@ namespace Dissector
             }
         }
 
-        /// <summary>
-        /// ResetRegion
-        /// 
-        ///     Resets the memory dump array to nothing to allow
-        ///     the class to redump the memory.
-        /// </summary>
-        public void ResetRegion()
-        {
-            this._dumpedMemoryRegion = null;
-        }
-        #endregion
+public class SigScan
+{
+    private byte[] _dumpedMemoryRegion;
+    private int _regionSize;
 
-        #region "sigScan Class Properties"
+    public SigScan()
+    {
+        this._dumpedMemoryRegion = null;
+        this._regionSize = 0;
+    }
 
-        public IntPtr Address
-        {
-            Marshal.StructureToPtr(obj, ptr, true);
-            Marshal.Copy(ptr, arr, 0, len);
-            Marshal.FreeHGlobal(ptr);
-        }
-        public int Size
-        {
-            get { return this._regionSize; }
-            set { this._regionSize = null; }
-        }
-        #endregion
+    public void ResetRegion()
+    {
+        this._dumpedMemoryRegion = null;
+        this._regionSize = 0;
+    }
 
+    public IntPtr Address { get; set; }
+
+    public int Size 
+    { 
+        get { return this._regionSize; }
+        set { this._regionSize = value; }
     }
 }
