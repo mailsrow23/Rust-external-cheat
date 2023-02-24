@@ -80,10 +80,10 @@
     </a>
 </p> 
  
-## 💬 ・[Discord](https://discord.gg/2euDQqzD8Y) | MAIN SERVER
-`CLICK BLUE BUTTON FOR JOIN SERVER.`
+## 💬 ・[Discord Server](https://discord.gg/2euDQqzD8Y)
+#### `CLICK BLUE BUTTON FOR JOIN SERVER.`
 
- ### 🛒〢 `SHOP`
+ ### 🛒〢 `PRODUCT`
  
 <table>
 <tr>
@@ -98,15 +98,14 @@
 - Lifetime 
 - Free Updates 
 - Undetected
-- Custom Feature if you want `(Example: Aimbot + Esp + Skin Changers)`
+- Custom Feature if you want `(Example: Aimbot + Esp + Skin Changers + More)`
 
-### 🔱〢 Warranty
+### 📌 〢 Warranty
 
-- Support 24 Hr
-- Update Free
-- If banned = `REFUND`
+- Support 24 Hr / Free updated 
+- Banned = `REFUND MONEY`
 
-A website that I created to introduce myself from start to finish. hope you like it [Serups.me](http://Serups.me/)
+#### Website | Portfolio [Serups.me](http://Serups.me/)
 
 ---
 
