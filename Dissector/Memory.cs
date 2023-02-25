@@ -103,15 +103,16 @@ private static SafeHandle GetProcessHandle()
             return ByteArrayToStructure<T>(buffer);
         }
 
-private static unsafe byte[] ReadMemory(IntPtr address, int numOfBytes, out long bytesRead)
-        {
-            byte[] buffer = new byte[numOfBytes];
+private static byte[] ReadMemory(IntPtr address, int numOfBytes, out int bytesRead)
+{
+    byte[] buffer = new byte[numOfBytes];
 
-            IntPtr pBytesRead = IntPtr.Zero;
+    if (!ReadProcessMemory(ProcessHandle, address, buffer, buffer.Length, out IntPtr pBytesRead))
+    {
+        throw new Win32Exception(Marshal.GetLastWin32Error());
+    }
 
-            ReadProcessMemory((int)ProcessHandle, (int)address, buffer, buffer.Length, ref numOfBytes);
+    bytesRead = pBytesRead.ToInt32();
 
-            bytesRead = pBytesRead.ToInt64();
-
-            return buffer;
-        }
+    return buffer;
+}
