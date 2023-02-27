@@ -4,7 +4,7 @@
 
 <p align="center">
   Internal that you will need to install an additional game client.
-</p>
+</p> 
 
 
 
