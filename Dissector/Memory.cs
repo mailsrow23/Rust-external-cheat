@@ -105,9 +105,7 @@ private static SafeHandle GetProcessHandle()
 
 private static byte[] ReadMemory(IntPtr address, int numOfBytes, out int bytesRead)
 {
-    byte[] buffer = new byte[numOfBytes];
-
-    if (!ReadProcessMemory(ProcessHandle, address, buffer, buffer.Length, out IntPtr pBytesRead))
+    if (!ReadProcessMemory(ProcessHandle, address, out byte[] buffer, numOfBytes, out IntPtr pBytesRead))
     {
         throw new Win32Exception(Marshal.GetLastWin32Error());
     }
@@ -116,3 +114,4 @@ private static byte[] ReadMemory(IntPtr address, int numOfBytes, out int bytesRe
 
     return buffer;
 }
+
