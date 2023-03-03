@@ -12,7 +12,7 @@
   <img src="https://img.shields.io/github/languages/top/Serups/Rust-Internal?style=flat-square"/>
   <img src="https://img.shields.io/github/last-commit/Serups/Rust-Internal?style=flat-square"/>
   <img src="https://img.shields.io/github/stars/Serups/Rust-Internal?color=5ac18e&label=Stars&style=flat-square"/>
-
+ 
 </p>
   
 --- 
