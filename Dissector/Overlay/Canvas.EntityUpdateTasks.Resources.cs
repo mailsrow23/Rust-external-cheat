@@ -408,71 +408,60 @@ namespace Dissector.Overlay
         #endregion
 
 
-        /// <summary>
-        /// If a resource gets used or killed or whatever, the networkable pointer should be 0 so we can remove it from the list
-        /// </summary>
-        /// <param name="resource"></param>
-        /// <param name="type"></param>
-        /// <returns></returns>
-        private static bool ValidateResource(GameObjectBase resource, ResourceType type)
+/// <summary>
+/// Validates a resource and removes it from the appropriate resource list if it has been used or destroyed.
+/// </summary>
+/// <param name="resource">The resource to validate.</param>
+/// <param name="type">The type of resource.</param>
+/// <returns>True if the resource is still valid; false otherwise.</returns>
+private static bool ValidateResource(GameObjectBase resource, ResourceType type)
+{
+    if (resource.Networkable == 0)
+    {
+        switch (type)
         {
-            if (resource.Networkable == 0)
-            {
-                switch (type)
-                {
-                    case ResourceType.StorageContainer:
-                        GameObjectBase storageContainer;
-                        RemoveStorageContainerFromDrawingList(resource);
-                        _gameObjectManager.StorageContainers.TryRemove(resource.InitialAddress, out storageContainer);
-                        break;
-                    case ResourceType.Hemp:
-                        GameObjectBase hempObject;
-                        RemoveHempNodeFromDrawingList(resource);
-                        _gameObjectManager.HempNodes.TryRemove(resource.InitialAddress, out hempObject);
-                        break;
-                    case ResourceType.ToolCupboard:
-                        GameObjectBase toolCupboard;
-                        RemoveToolCupboardFromDrawingList(resource);
-                        _gameObjectManager.ToolCupboards.TryRemove(resource.InitialAddress, out toolCupboard);
-                        break;
-                    case ResourceType.MilitaryCrate:
-                        GameObjectBase lootObject;
-                        RemoveMilitaryCrateFromDrawingList(resource);
-                        _gameObjectManager.MilitaryCrates.TryRemove(resource.InitialAddress, out lootObject);
-                        break;
-                    case ResourceType.WoodenLootCrate:
-                        GameObjectBase woodenLootCrate;
-                        RemoveWoodLootCrateFromDrawingList(resource);
-                        _gameObjectManager.WoodenLootCrates.TryRemove(resource.InitialAddress, out woodenLootCrate);
-                        break;
-                    case ResourceType.Animal:
-                        GameObjectBase animalObject;
-                        RemoveAnimalEntityFromDrawingList(resource);
-                        _gameObjectManager.Animals.TryRemove(resource.InitialAddress, out animalObject);
-                        break;
-                    case ResourceType.Sulfur:
-                        GameObjectBase sulfurObject;
-                        RemoveSulfurEntityFromDrawingList(resource);
-                        _gameObjectManager.SulfurNodes.TryRemove(resource.InitialAddress, out sulfurObject);
-                        break;
-                    case ResourceType.Metal:
-                        GameObjectBase metalObject;
-                        RemoveMetalOreEntityFromDrawingList(resource);
-                        _gameObjectManager.MetalNodes.TryRemove(resource.InitialAddress, out metalObject);
-                        break;
-                    case ResourceType.Stone:
-                        GameObjectBase stoneObject;
-                        RemoveStoneOreEntityFromDrawingList(resource);
-                        _gameObjectManager.StoneNodes.TryRemove(resource.InitialAddress, out stoneObject);
-                        break;
-                    default:
-                        break;
-                }
-
-                return false;
-            }
-
-            return true;
+            case ResourceType.StorageContainer:
+                RemoveStorageContainerFromDrawingList(resource);
+                _gameObjectManager.StorageContainers.TryRemove(resource.InitialAddress, out _);
+                break;
+            case ResourceType.Hemp:
+                RemoveHempNodeFromDrawingList(resource);
+                _gameObjectManager.HempNodes.TryRemove(resource.InitialAddress, out _);
+                break;
+            case ResourceType.ToolCupboard:
+                RemoveToolCupboardFromDrawingList(resource);
+                _gameObjectManager.ToolCupboards.TryRemove(resource.InitialAddress, out _);
+                break;
+            case ResourceType.MilitaryCrate:
+                RemoveMilitaryCrateFromDrawingList(resource);
+                _gameObjectManager.MilitaryCrates.TryRemove(resource.InitialAddress, out _);
+                break;
+            case ResourceType.WoodenLootCrate:
+                RemoveWoodLootCrateFromDrawingList(resource);
+                _gameObjectManager.WoodenLootCrates.TryRemove(resource.InitialAddress, out _);
+                break;
+            case ResourceType.Animal:
+                RemoveAnimalEntityFromDrawingList(resource);
+                _gameObjectManager.Animals.TryRemove(resource.InitialAddress, out _);
+                break;
+            case ResourceType.Sulfur:
+                RemoveSulfurEntityFromDrawingList(resource);
+                _gameObjectManager.SulfurNodes.TryRemove(resource.InitialAddress, out _);
+                break;
+            case ResourceType.Metal:
+                RemoveMetalOreEntityFromDrawingList(resource);
+                _gameObjectManager.MetalNodes.TryRemove(resource.InitialAddress, out _);
+                break;
+            case ResourceType.Stone:
+                RemoveStoneOreEntityFromDrawingList(resource);
+                _gameObjectManager.StoneNodes.TryRemove(resource.InitialAddress, out _);
+                break;
+            default:
+                throw new ArgumentException($"Invalid resource type: {type}", nameof(type));
         }
+
+        return false;
     }
+
+    return true;
 }
