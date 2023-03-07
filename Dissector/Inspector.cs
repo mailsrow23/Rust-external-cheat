@@ -283,26 +283,19 @@ namespace Dissector
 
 public class SigScan
 {
-    private byte[] _dumpedMemoryRegion;
-    private int _regionSize;
+    public byte[] DumpedMemoryRegion { get; set; }
+    public int RegionSize { get; set; }
 
     public SigScan()
     {
-        this._dumpedMemoryRegion = null;
-        this._regionSize = 0;
+        ResetRegion();
     }
 
     public void ResetRegion()
     {
-        this._dumpedMemoryRegion = null;
-        this._regionSize = 0;
+        DumpedMemoryRegion = null;
+        RegionSize = 0;
     }
 
     public IntPtr Address { get; set; }
-
-    public int Size 
-    { 
-        get { return this._regionSize; }
-        set { this._regionSize = value; }
-    }
 }
