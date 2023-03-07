@@ -121,18 +121,17 @@ private async void _consoleTimer_Elapsed(object sender, ElapsedEventArgs e)
             await listBox_Console.InvokeAsync(() =>
             {
                 listBox_Console.Items.Add(message);
-                listBox_Console.SelectedIndex = listBox_Console.Items.Count - 1;
-                listBox_Console.SelectedIndex = -1;
+                listBox_Console.TopIndex = listBox_Console.Items.Count - 1;
             });
         }
         else
         {
             listBox_Console.Items.Add(message);
-            listBox_Console.SelectedIndex = listBox_Console.Items.Count - 1;
-            listBox_Console.SelectedIndex = -1;
+            listBox_Console.TopIndex = listBox_Console.Items.Count - 1;
         }
     }
 }
+
 
 
         
