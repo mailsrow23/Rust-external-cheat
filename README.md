@@ -21,6 +21,12 @@
 
 - Use it at your own risk. Because this is the free version and the chances of being detected are quite high.
 - Read all installation steps to understand.
+- **Scroll Down for Raed more**
+
+#### ❗ Help & Support
+- Not understand How To Use | Join Discord For Helps: [Discord Servers](https://discord.gg/2euDQqzD8Y)
+
+---
 
 
 ## <a id="features"></a>🛑 〢 Features
@@ -38,8 +44,9 @@
 ### MISC
 - Save & Config
 
+---
 
-## <a id="setup2"></a> 🗒 〢 Undetected
+### <a id="setup2"></a> 🗒 〢 Undetected
 - Free version is used by many Users, Detected are quite High | Our recommended alternative is Private Cheat.
 - **Legit Playing & Waranty & Lifetime | Up To You.**
 - [Discord Server](https://discord.gg/2euDQqzD8Y) 
