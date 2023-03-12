@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using System.Threading;
 using Timer = System.Threading.Timer;
 
-namespace RyuzakiUI
+namespace Rust
 {
     public partial class ConsoleApp : Form
     {
