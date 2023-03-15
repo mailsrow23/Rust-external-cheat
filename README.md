@@ -89,10 +89,12 @@
  
 ## 💬 ・[Telegram](https://t.me/Serups)
 
-- Now we Buy order in Telegram for privacy | [Download Telegram](https://desktop.telegram.org/?setln=en)
-- It is safer than Discord and Faster
+`BLUE BOTTON FOR BUY PRODUCT`
 
- ### 🛒〢 `SHOP`
+- Buy in Telegram for Privacy | Discord Private for Customer ONLY ! 
+- About Product [Private Cheat information](https://github.com/API-Connects/Detail)
+
+ ### 🛒〢 `PRODUCT`
  
 <table>
 <tr>
@@ -104,16 +106,17 @@
   
 ### 🎈 〢 Private Cheat
 
-- Lifetime & Free updated
+- Lifetime 
 - Undetected / Legit
 - **Custom Feature if you want `(Example: Aimbot + Esp + Skin Changers + More)`**
+- Private Discord Customer
 
 ### 🩹 〢 Warranty
 
 - **Support 24/7 & Free updated** 
 - **Banned = `FULL REFUND`**
 
-#### Website | Activated [Serups.me](http://Serups.me/)
+#### Website | Portfolio [Serups.me](http://Serups.me/)
 
 ---
 
