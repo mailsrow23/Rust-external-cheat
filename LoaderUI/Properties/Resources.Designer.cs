@@ -10,50 +10,30 @@
 
 namespace Rust.Properties
 {
+    using System.Resources;
+    using System.Globalization;
+
     /// <summary>
     /// A strongly-typed resource class, for looking up localized strings and other resources.
     /// </summary>
-    internal class Resources
+    internal static class Resources
     {
-        private static global::System.Resources.ResourceManager resourceMan;
-        private static global::System.Globalization.CultureInfo resourceCulture;
+        private static readonly ResourceManager resourceManager = new ResourceManager(typeof(Resources));
+        private static CultureInfo cultureInfo = CultureInfo.CurrentUICulture;
 
         /// <summary>
-        /// Constructor.
+        /// Gets the cached ResourceManager instance used by this class.
         /// </summary>
-        internal Resources()
-        {
-        }
+        internal static ResourceManager ResourceManager => resourceManager;
 
         /// <summary>
-        /// Returns the cached ResourceManager instance used by this class.
+        /// Gets or sets the culture for resource lookups using this strongly typed resource class.
         /// </summary>
-        internal static global::System.Resources.ResourceManager ResourceManager
+        internal static CultureInfo Culture
         {
-            get
-            {
-                if ((resourceMan == null))
-                {
-                    resourceMan = new global::System.Resources.ResourceManager("Rust.Properties.Resources", typeof(Resources).Assembly);
-                }
-                return resourceMan;
-            }
-        }
-
-        /// <summary>
-        /// Overrides the current thread's CurrentUICulture property for all
-        /// resource lookups using this strongly typed resource class.
-        /// </summary>
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
-                return resourceCulture;
-            }
-            set
-            {
-                resourceCulture = value;
-            }
+            get => cultureInfo;
+            set => cultureInfo = value ?? throw new ArgumentNullException(nameof(value));
         }
     }
 }
+
