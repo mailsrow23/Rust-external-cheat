@@ -8,23 +8,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RyuzakiUI.Properties
+namespace Rust.Properties
 {
-
-
-    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
+    [global::System.Runtime.CompilerServices.CompilerGenerated]
+    [global::System.CodeDom.Compiler.GeneratedCode("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
+    public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
     {
+        public static Settings Default { get; } = new Settings();
 
-        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+        // Add application settings properties here...
 
-        public static Settings Default
+        private void ResetSettings()
         {
-            get
-            {
-                return defaultInstance;
-            }
+            // Reset the application settings to their default values
+            Properties.Settings.Default.Reset();
         }
     }
 }
