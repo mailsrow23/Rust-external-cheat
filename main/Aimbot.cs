@@ -85,6 +85,7 @@ public static Entity FindNearestEnemy()
 {
     Entity nearestEnemy = null;
     float closestDistance = float.MaxValue;
+    Vector3 localPlayerPosition = LocalPlayer.Position;
 
     foreach (Entity entity in EntitiesUpdater.EntityList)
     {
@@ -93,7 +94,7 @@ public static Entity FindNearestEnemy()
             continue;
         }
 
-        float distance = Vector3.Distance(LocalPlayer.Position, entity.Position);
+        float distance = Vector3.Distance(localPlayerPosition, entity.Position);
         if (distance > 300 || !IsEnemyVisible(entity))
         {
             continue;
@@ -111,7 +112,34 @@ public static Entity FindNearestEnemy()
 
 private static bool IsEnemyVisible(Entity entity)
 {
-    // TODO: Implement visibility check based on game mechanics
+    Vector3 localPlayerPosition = LocalPlayer.Position;
+    Vector3 entityPosition = entity.Position;
+
+    // Check if the entity is too far away to be visible
+    if (Vector3.Distance(localPlayerPosition, entityPosition) > 300)
+    {
+        return false;
+    }
+
+    // Check if the entity is behind a wall or obstacle
+    RaycastHit hit;
+    if (Physics.Linecast(localPlayerPosition, entityPosition, out hit))
+    {
+        if (hit.transform != entity.transform)
+        {
+            return false;
+        }
+    }
+
+    // Check if the entity is within the field of view of the local player
+    Vector3 directionToEntity = (entityPosition - localPlayerPosition).normalized;
+    float angle = Vector3.Angle(directionToEntity, LocalPlayer.Forward);
+    if (angle > 60)
+    {
+        return false;
+    }
+
     return true;
 }
+
 
