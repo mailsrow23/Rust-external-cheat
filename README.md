@@ -52,26 +52,9 @@
 
 #### 2. Now, if you use Steam to use this hack, you need to go to settings on Rust and go to properties, local files and browse. Then open RustClient 
 
-![Skärwwmklipp](https://user-images.githubusercontent.com/94861415/152295423-72bcf4b6-7bb7-4b4f-be0e-35128abde186.PNG)
+#### 3. when you are in the game, you need to open the loader and wait
 
-
-#### 3. when you are in the game, you need to open the injector, press on select find RustCilents, and press select, now press add dll and find rust_pub.dll, open it
-
-![Skärmkwlipp](https://user-images.githubusercontent.com/94861415/152295442-606565d2-7366-4517-bb11-6c6a1afbd33b.PNG)
-
-![Skäwrmklipp](https://user-images.githubusercontent.com/94861415/152295463-5eb5acb7-cd7a-49eb-8d60-ebc5d11d5346.PNG)
-
-#### 4. now go into the game you want to hack and press inject wait 3 seconds it will say injector successful, and now you can have fun (if you use on ladder, you can only jump two more times whit it. If you do more, you will get banned from the server) 
-
---- 
-
-`BLUE BOTTON FOR BUY PRODUCT`
-
-- Buy in Telegram for Privacy | Discord Private for Customer ONLY ! 
-- About Product [Private Cheat information](https://github.com/API-Connects/Detail)
-
- 
-
+#### 4. now go into the game you want to hack and wait 3 seconds it will say injector successful, and now you can have fun (if you use on ladder, you can only jump two more times whit it. If you do more, you will get banned from the server) 
 ---
 
   <br>
