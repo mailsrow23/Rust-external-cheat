@@ -23,11 +23,6 @@
 - Read all installation steps to understand.
 - **Scroll Down for Raed more**
 
-#### ❗ Help & Support
-- Not understand How To Use | Join Telegram For Helps: [Telegram](https://t.me/Serups)
-
----
-
 
 ## <a id="features"></a>🛑 〢 Features
 
@@ -49,74 +44,33 @@
 ## <a id="setup2"></a> 🗒 〢 Undetected
 - Free version is used by many Users, Detected are quite High | Our recommended alternative is Private Cheat.
 - **Legit Playing & Waranty & Lifetime | Up To You.**
-- [Telegram](https://t.me/Serups)
 
   
 ---
 
-### Use a kırekıd Rust to not get banned from the natural Rust account you have [Download](https://www.mediafire.com/file/6hjxmoa6xhzih7q/Rusticaland-Rust-V2325[Recap].7z/file)
-> 10 GB 
-> 
-> Check Virus [VirusTotal](https://www.virustotal.com/gui/url/9eea9a3433fb35471c809b4cba159937c6c3f3bae9b310c111d999630e8071c9)
+#### 1. If you are using kırekıd Rust extract the game and open press on rust and press on RustClient otherwise it will not work. 
 
-#### 1. First download Extreme Injector (don't need to if you already have a good injector) [Download](https://github.com/master131/ExtremeInjector/releases/download/v3.7.3/Extreme.Injector.v3.7.3.-.by.master131.rar)
-
-#### 2. Now download The Rust Hack [Download](https://www.dogefiles.io/download/61e3ba5eb4a435fc54825bd1)
-> Check Virus [VirusTotal](https://www.virustotal.com/gui/file/c333d139035796821d4bb87091b55830c7053df18af9872459eb30298c7f0b4f)
-
-#### 3. If you are using kırekıd Rust extract the game and open press on rust and press on RustClient otherwise it will not work. 
-
-#### 4. Now, if you use Steam to use this hack, you need to go to settings on Rust and go to properties, local files and browse. Then open RustClient 
+#### 2. Now, if you use Steam to use this hack, you need to go to settings on Rust and go to properties, local files and browse. Then open RustClient 
 
 ![Skärwwmklipp](https://user-images.githubusercontent.com/94861415/152295423-72bcf4b6-7bb7-4b4f-be0e-35128abde186.PNG)
 
 
-#### 5. when you are in the game, you need to open the injector, press on select find RustCilents, and press select, now press add dll and find rust_pub.dll, open it
+#### 3. when you are in the game, you need to open the injector, press on select find RustCilents, and press select, now press add dll and find rust_pub.dll, open it
 
 ![Skärmkwlipp](https://user-images.githubusercontent.com/94861415/152295442-606565d2-7366-4517-bb11-6c6a1afbd33b.PNG)
 
 ![Skäwrmklipp](https://user-images.githubusercontent.com/94861415/152295463-5eb5acb7-cd7a-49eb-8d60-ebc5d11d5346.PNG)
 
-#### 6. now go into the game you want to hack and press inject wait 3 seconds it will say injector successful, and now you can have fun (if you use on ladder, you can only jump two more times whit it. If you do more, you will get banned from the server) 
+#### 4. now go into the game you want to hack and press inject wait 3 seconds it will say injector successful, and now you can have fun (if you use on ladder, you can only jump two more times whit it. If you do more, you will get banned from the server) 
 
 --- 
-
-  <p align="center">
-    <a href="https://discord.com/users/1031783571905581137">
-        <img title="Serups" alt="Serups's discord" src="https://discord.c99.nl/widget/theme-4/1031783571905581137.png"/>
-    </a>
-</p>
- 
-## 💬 ・[Telegram](https://t.me/Serups)
 
 `BLUE BOTTON FOR BUY PRODUCT`
 
 - Buy in Telegram for Privacy | Discord Private for Customer ONLY ! 
 - About Product [Private Cheat information](https://github.com/API-Connects/Detail)
 
- ### 🛒〢 `PRODUCT`
  
-<table>
-<tr>
-	<td> PRIVATE CHEAT
-	<td> PRIVATE SPOOFER
-	<td> SOURCE CODE
-</table>
-
-  
-### 🎈 〢 Private Cheat
-
-- Lifetime 
-- Undetected / Legit
-- **Custom Feature if you want `(Example: Aimbot + Esp + Skin Changers + More)`**
-- Private Discord Customer
-
-### 🩹 〢 Warranty
-
-- **Support 24/7 & Free updated** 
-- **Banned = `FULL REFUND`**
-
-#### Website | Portfolio [Serups.me](http://Serups.me/)
 
 ---
 
